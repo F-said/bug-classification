@@ -17,6 +17,7 @@ for line in buggyfiles:
         begin_ind = line.rfind("/") + 1
         file_name = line[begin_ind:-1]
 
+        # If file name not already recorded then record
         if file_name not in buggyfile_list:
             buggyfile_list.append(file_name)
 
@@ -24,3 +25,5 @@ for line in buggyfiles:
 for file in buggyfile_list:
     writefile = open(file, "w")
     writefile.close()
+
+# Copy path to file that matches the name
