@@ -1,0 +1,486 @@
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+// We need to load the properties from the hadoop configuration
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Iterator<Map.Entry<String, String>> iter = jobConf.iterator();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (iter.hasNext()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Map.Entry<String, String> entry = iter.next();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Enumeration<Object> propertiesIter = properties.keys();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (propertiesIter.hasMoreElements()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String key = (String) propertiesIter.nextElement();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String val = properties.getProperty(key);
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+//clear user defined properties and re-populate
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+properties.clear();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (hodPropertiesIter.hasMoreElements()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String key = (String) hodPropertiesIter.nextElement();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+properties.put(key, val);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+throw e;
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+Exception e = getExceptionFromString(msgs[j]);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+exceptions.add(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+for(Enum e : PigWarning.values()) {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+Long currentCount = aggMap.get(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+currentCount = (currentCount == null? 0 : currentCount);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+currentCount += counters.getCounter(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+aggMap.put(e, currentCount);
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+buildPlan(query);
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate x + null, x * null, x / null, x - null, null % x, " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate (2 > 1? null : 1), ( 2 < 1 ? null : 1), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"d = foreach c generate flatten((SIZE(a) == 0 ? null : a)), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate SIZE(null), CONCAT(str, null), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return true;
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return false;
+src/org/apache/pig/Main.java
+Utils.writeLog(pe, logFileName, log, verbose);
+src/org/apache/pig/Main.java
+Utils.writeLog(e, logFileName, log, verbose);
+src/org/apache/pig/Main.java
+} else {
+src/org/apache/pig/Main.java
+}
+src/org/apache/pig/Main.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/Main.java
+* distributed with this work for additional information
+src/org/apache/pig/Main.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/Main.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/Main.java
+*
+src/org/apache/pig/Main.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/Main.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/Main.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/Main.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/Main.java
+* limitations under the License.
+src/org/apache/pig/Main.java
+*/
+src/org/apache/pig/Main.java
+if(logFileName == null) {
+src/org/apache/pig/Main.java
+return;
+src/org/apache/pig/Main.java
+try {
+src/org/apache/pig/Main.java
+} catch (IOException ioe) {
+src/org/apache/pig/PigServer.java
+} else {
+src/org/apache/pig/PigServer.java
+}
+src/org/apache/pig/PigServer.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/PigServer.java
+* distributed with this work for additional information
+src/org/apache/pig/PigServer.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/PigServer.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/PigServer.java
+*
+src/org/apache/pig/PigServer.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/PigServer.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/PigServer.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/PigServer.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/PigServer.java
+* limitations under the License.
+src/org/apache/pig/PigServer.java
+*/
+src/org/apache/pig/PigServer.java
+return;
+src/org/apache/pig/PigServer.java
+try {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+Utils.writeLog(exceptions.get(j), pigContext.getProperties().getProperty("pig.logfile"), log, false, headerMessage, false, false);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+throw new ExecException(msg, errCode, PigException.BUG);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* distributed with this work for additional information
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+*
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* limitations under the License.
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+*/
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+try {
+src/org/apache/pig/builtin/BinStorage.java
+} catch (ExecException ee) {
+src/org/apache/pig/builtin/BinStorage.java
+throw ee;
+src/org/apache/pig/builtin/BinStorage.java
+}
+src/org/apache/pig/builtin/BinStorage.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/builtin/BinStorage.java
+* distributed with this work for additional information
+src/org/apache/pig/builtin/BinStorage.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/builtin/BinStorage.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/builtin/BinStorage.java
+*
+src/org/apache/pig/builtin/BinStorage.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/builtin/BinStorage.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/builtin/BinStorage.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/builtin/BinStorage.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/builtin/BinStorage.java
+* limitations under the License.
+src/org/apache/pig/builtin/BinStorage.java
+*/
+src/org/apache/pig/builtin/BinStorage.java
+try {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public DataBag bytesToBag(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public String bytesToCharArray(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Float bytesToFloat(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Integer bytesToInteger(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Long bytesToLong(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Map<Object, Object> bytesToMap(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Tuple bytesToTuple(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+"converted to long, caught NumberFormatException <" +
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+} catch (ParseException pe) {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+pigLogger = PhysicalOperator.getPigLogger();
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+} else {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+}
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+return t;
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* distributed with this work for additional information
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+*
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* limitations under the License.
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+*/
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+try {
+src/org/apache/pig/data/DataReaderWriter.java
+} else {
+src/org/apache/pig/data/DataReaderWriter.java
+}
+src/org/apache/pig/data/DataReaderWriter.java
+// Don't use Tuple.readFields, because it requires you to
+src/org/apache/pig/data/DataReaderWriter.java
+// create a tuple with no size and then append fields.
+src/org/apache/pig/data/DataReaderWriter.java
+// That's less efficient than allocating the tuple size up
+src/org/apache/pig/data/DataReaderWriter.java
+// front and then filling in the spaces.
+src/org/apache/pig/data/DataReaderWriter.java
+// Read the size.
+src/org/apache/pig/data/DataReaderWriter.java
+int sz = in.readInt();
+src/org/apache/pig/data/DataReaderWriter.java
+// if sz == 0, we construct an "empty" tuple -
+src/org/apache/pig/data/DataReaderWriter.java
+// presumably the writer wrote an empty tuple!
+src/org/apache/pig/data/DataReaderWriter.java
+if (sz < 0) {
+src/org/apache/pig/data/DataReaderWriter.java
+throw new IOException("Invalid size " + sz +
+src/org/apache/pig/data/DataReaderWriter.java
+" for a tuple");
+src/org/apache/pig/data/DataReaderWriter.java
+Tuple t = mTupleFactory.newTuple(sz);
+src/org/apache/pig/data/DataReaderWriter.java
+for (int i = 0; i < sz; i++) {
+src/org/apache/pig/data/DataReaderWriter.java
+t.set(i, readDatum(in));
+src/org/apache/pig/data/DataReaderWriter.java
+return t;
+src/org/apache/pig/data/DataReaderWriter.java
+DataBag bag = mBagFactory.newDefaultBag();
+src/org/apache/pig/data/DataReaderWriter.java
+bag.readFields(in);
+src/org/apache/pig/data/DataReaderWriter.java
+return bag;
+src/org/apache/pig/data/DataReaderWriter.java
+case DataType.MAP: {
+src/org/apache/pig/data/DataReaderWriter.java
+int size = in.readInt();
+src/org/apache/pig/data/DataReaderWriter.java
+Map<Object, Object> m = new HashMap<Object, Object>(size);
+src/org/apache/pig/data/DataReaderWriter.java
+for (int i = 0; i < size; i++) {
+src/org/apache/pig/data/DataReaderWriter.java
+Object key = readDatum(in);
+src/org/apache/pig/data/DataReaderWriter.java
+m.put(key, readDatum(in));
+src/org/apache/pig/data/DataReaderWriter.java
+return m;
+src/org/apache/pig/data/DataReaderWriter.java
+byte[] ba = new byte[size];
+src/org/apache/pig/data/DataReaderWriter.java
+in.readFully(ba);
+src/org/apache/pig/data/DataReaderWriter.java
+return new String(ba, DataReaderWriter.UTF8);
+src/org/apache/pig/data/DataReaderWriter.java
+case DataType.CHARARRAY: {
+src/org/apache/pig/data/DataReaderWriter.java
+int size = in.readUnsignedShort();
+src/org/apache/pig/data/DataReaderWriter.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/data/DataReaderWriter.java
+* distributed with this work for additional information
+src/org/apache/pig/data/DataReaderWriter.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/data/DataReaderWriter.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/data/DataReaderWriter.java
+*
+src/org/apache/pig/data/DataReaderWriter.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/data/DataReaderWriter.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/data/DataReaderWriter.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/data/DataReaderWriter.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/data/DataReaderWriter.java
+* limitations under the License.
+src/org/apache/pig/data/DataReaderWriter.java
+*/
+src/org/apache/pig/tools/grunt/Grunt.java
+}
+src/org/apache/pig/tools/grunt/Grunt.java
+Utils.writeLog(t, pig.getPigContext().getProperties().getProperty("pig.logfile"), log, verbose);
+src/org/apache/pig/tools/grunt/Grunt.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/tools/grunt/Grunt.java
+* distributed with this work for additional information
+src/org/apache/pig/tools/grunt/Grunt.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/tools/grunt/Grunt.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/tools/grunt/Grunt.java
+*
+src/org/apache/pig/tools/grunt/Grunt.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/tools/grunt/Grunt.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/tools/grunt/Grunt.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/tools/grunt/Grunt.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/tools/grunt/Grunt.java
+* limitations under the License.
+src/org/apache/pig/tools/grunt/Grunt.java
+*/
+src/org/apache/pig/tools/grunt/Grunt.java
+try {
+src/org/apache/pig/tools/grunt/GruntParser.java
+} else {
+src/org/apache/pig/tools/grunt/GruntParser.java
+}
+src/org/apache/pig/tools/grunt/GruntParser.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/tools/grunt/GruntParser.java
+* distributed with this work for additional information
+src/org/apache/pig/tools/grunt/GruntParser.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/tools/grunt/GruntParser.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/tools/grunt/GruntParser.java
+*
+src/org/apache/pig/tools/grunt/GruntParser.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/tools/grunt/GruntParser.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/tools/grunt/GruntParser.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/tools/grunt/GruntParser.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/tools/grunt/GruntParser.java
+* limitations under the License.
+src/org/apache/pig/tools/grunt/GruntParser.java
+*/
+src/org/apache/pig/tools/grunt/GruntParser.java
+log.error("You don't have permission to perform the operation. Error from the server: " + pe.getMessage());
+src/org/apache/pig/tools/grunt/GruntParser.java
+ByteArrayOutputStream bs = new ByteArrayOutputStream();
+src/org/apache/pig/tools/grunt/GruntParser.java
+log.error(bs.toString());
+src/org/apache/pig/tools/grunt/GruntParser.java
+try {
+test/org/apache/pig/test/TestBestFitCast.java
+}
+test/org/apache/pig/test/TestBestFitCast.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestBestFitCast.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestBestFitCast.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestBestFitCast.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestBestFitCast.java
+*
+test/org/apache/pig/test/TestBestFitCast.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestBestFitCast.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestBestFitCast.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestBestFitCast.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestBestFitCast.java
+* limitations under the License.
+test/org/apache/pig/test/TestBestFitCast.java
+*/
+test/org/apache/pig/test/TestBestFitCast.java
+try {
+test/org/apache/pig/test/TestGrunt.java
+}
+test/org/apache/pig/test/TestGrunt.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestGrunt.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestGrunt.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestGrunt.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestGrunt.java
+*
+test/org/apache/pig/test/TestGrunt.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestGrunt.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestGrunt.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestGrunt.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestGrunt.java
+* limitations under the License.
+test/org/apache/pig/test/TestGrunt.java
+*/
+test/org/apache/pig/test/TestGrunt.java
+try {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public DataBag bytesToBag(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public String bytesToCharArray(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Double bytesToDouble(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Float bytesToFloat(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Integer bytesToInteger(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Long bytesToLong(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Map<Object, Object> bytesToMap(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Tuple bytesToTuple(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+} else {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+}
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+*
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* limitations under the License.
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+*/
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return;
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+try {
