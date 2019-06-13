@@ -6,6 +6,9 @@ from applyw2v import tokenizeCode, filterNonsense, joinstatement
 Create dataframe using pandas to classify which statements are buggy 
 """
 
+# Path on local machine
+data_path = "/Users/farukhsaidmuratov/PycharmProjects/bug-classification/data/"
+
 # Create data frame to hold code line and bug classification (1 for bug, 0 for no bug)
 buggy_code_df = pd.DataFrame(columns=['Statement', 'Bug'])
 
@@ -43,13 +46,19 @@ for file in buggy_dict.keys():
 # of code in the list
 for filename in os.listdir('data'):
     # Open file to read and record statements
-    with open(filename, 'r') as f:
+    with open(data_path + filename, 'r') as f:
         lines = f.readlines()
-        # Tokenize 
+        # Tokenize
         sents = [tokenizeCode(line) for line in lines]
         filtered_sentences = [sent for sent in sents if filterNonsense(sent)]
         joined_sentences = joinstatement(filtered_sentences)
 
+        for sentence in joined_sentences:
+            if sentence in buggy_dict[filename]:
+                buggy_code_df = buggy_code_df.append({'Statement': sentence, 'Bug': 1}, ignore_index=True)
+            else:
+                buggy_code_df = buggy_code_df.append({'Statement': sentence, 'Bug': 0}, ignore_index=True)
 
+# Save as csv file
+buggy_code_df.to_csv(path_or_buf="bug-classification.csv", index=False)
 
-print("Somebody once told me")
