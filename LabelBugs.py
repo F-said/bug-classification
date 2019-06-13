@@ -10,7 +10,7 @@ Create dataframe using pandas to classify which statements are buggy
 data_path = "/Users/farukhsaidmuratov/PycharmProjects/bug-classification/data/"
 
 # Create data frame to hold code line and bug classification (1 for bug, 0 for no bug)
-buggy_code_df = pd.DataFrame(columns=['Statement', 'Bug'])
+buggy_code_df = pd.DataFrame(columns=['File', 'Statement', 'Bug'])
 
 # Create dict of lists of buggy lines with keys being file names
 filetype = "java"
@@ -55,9 +55,9 @@ for filename in os.listdir('data'):
 
         for sentence in joined_sentences:
             if sentence in buggy_dict[filename]:
-                buggy_code_df = buggy_code_df.append({'Statement': sentence, 'Bug': 1}, ignore_index=True)
+                buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 1}, ignore_index=True)
             else:
-                buggy_code_df = buggy_code_df.append({'Statement': sentence, 'Bug': 0}, ignore_index=True)
+                buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0}, ignore_index=True)
 
 # Save as csv file
 buggy_code_df.to_csv(path_or_buf="bug-classification.csv", index=False)
