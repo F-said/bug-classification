@@ -9,8 +9,6 @@ Train word2vec model on PigCode.java.
 Idea: If end result isn't accurate, perhaps add a lot more non-buggy code?
 """
 
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-
 data_file = "PigCode.java"
 
 # Consider each statement as a sentence. Therefore partition the code into a list of strings separated by semicolons
