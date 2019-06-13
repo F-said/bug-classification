@@ -1,5 +1,7 @@
 # bug-classification
 
+Supervised learning problem to classify bugs by converting java code into vectors using word2vec.
+
 Framework
 
 1) Collect all statements in all methods and regard each statement as a single sentence.
