@@ -31,15 +31,25 @@ for file in buggyfiles:
         else:
             buggy_dict[file_name].append(buggyfiles.readline())
 
-# For each file in data
-for filename in os.listdir('data'):
-    # Write it to the data file
-    data.writelines([l for l in open(path + filename, "r").readlines()])
+# Tokenize the lists in the dict
+for file in buggy_dict.keys():
+    sents = [tokenizeCode(line) for line in buggy_dict[file]]
+    filtered_sentences = [sent for sent in sents if filterNonsense(sent)]
+    joined_sentences = joinstatement(filtered_sentences)
 
-with open("PigCode.java", 'r') as f:
-    lines = f.readlines()
-sents = [tokenizeCode(line) for line in lines]
-filtered_sentences = [sent for sent in sents if filterNonsense(sent)]
-joined_sentences = joinstatement(filtered_sentences)
+    buggy_dict[file] = joined_sentences
+
+# For each file in data classify as bug if line of code appears in dictionary, with file name as the key and with line
+# of code in the list
+for filename in os.listdir('data'):
+    # Open file to read and record statements
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        # Tokenize 
+        sents = [tokenizeCode(line) for line in lines]
+        filtered_sentences = [sent for sent in sents if filterNonsense(sent)]
+        joined_sentences = joinstatement(filtered_sentences)
+
+
 
 print("Somebody once told me")
