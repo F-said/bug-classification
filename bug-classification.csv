@@ -42,42 +42,42 @@ TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'loa
 TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery2', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", 'using', '""', '+', 'PigStorage', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ""'"", ':', ""'"", ')', ')', 'generate', '$', '1', ',', ""'"", 'aoeuaoeu', ""'"", ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query3', 'and', 'Query4']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery3', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'cogroup', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '$', '1', ',', '(', 'load', ""'"", 'b', ""'"", ')', 'by', '$', '1', ')', 'generate', 'org', '.', 'apache', '.', 'pig', '.', 'builtin', '.', 'AVG', '(', '$', '1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery4', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', 'AVG', '(', '$', '1', ',', '$', '2', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery5', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'group', '(', 'load', ""'"", 'a', ""'"", ')', 'ALL', ')', 'generate', '$', '1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery6', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'group', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '$', '1', ')', 'generate', 'group', ',', ""'"", '1', ""'"", ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery7', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", 'using', '""', '+', 'PigStorage', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ')', ')', 'generate', '$', '1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery10', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'cogroup', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '(', '$', '1', ')', ',', '(', 'load', ""'"", 'b', ""'"", ')', 'by', '(', '$', '1', ')', ')', 'generate', '$', '1', '.', '$', '1', ',', '$', '2', '.', '$', '1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query11', 'and', 'Query12']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery11', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'group', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '$', '1', ',', '(', 'load', ""'"", 'b', ""'"", ')', 'by', '$', '2', ')', 'generate', 'group', ',', 'AVG', '(', '$', '1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery12', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", 'using', '""', '+', 'PigStorage', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ')', ')', 'generate', 'AVG', '(', '$', '1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery13', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'cogroup', '(', 'load', ""'"", 'a', ""'"", ')', 'ALL', ')', 'generate', 'group', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery14', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'group', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '(', '$', '6', ',', '$', '7', ')', ')', 'generate', 'flatten', '(', 'group', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery15', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '$', '1', ',', ""'"", 'hello', ""'"", ',', '$', '3', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery100', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'test', 'define', 'syntax']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'define', 'FUNC', 'ARITY', '(', ')', ';', '""', ';']",0
@@ -85,34 +85,34 @@ TestLogicalPlanBuilder.java,"['LogicalOperator', 'lo', '=', 'buildPlan', '(', 'q
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'lo', 'instanceof', 'LODefine', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail1', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'group', '(', 'A', '=', 'load', ""'"", 'a', ""'"", ')', 'by', '$', '1', ')', 'generate', 'A', '.', ""'"", '1', ""'"", ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail2', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', 'group', '(', 'load', ""'"", 'a', ""'"", ')', 'by', '$', '1', 'generate', '$', '1', '.', '*', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail3', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'generate', 'DISTINCT', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail4', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'generate', '[', 'ORDER', 'BY', '$', '0', ']', '[', '$', '3', ',', '$', '4', ']', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail5', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'generate', '""', '+', 'TestApplyFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', '$', '2', '.', '*', ')', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '*', '*']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query17']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery17', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'A', ""'"", ')', '""', '+', '""', 'generate', '""', '+', 'TestApplyFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', '$', '1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['static', 'public', 'class', 'TestApplyFunc', 'extends', 'org', '.', 'apache', '.', 'pig', '.', 'EvalFunc', '<', 'Tuple', '>', '{']",0
 TestLogicalPlanBuilder.java,"['public', 'Tuple', 'exec', '(', 'Tuple', 'input', ')', 'throws', 'IOException', '{']",0
 TestLogicalPlanBuilder.java,"['Tuple', 'output', '=', 'TupleFactory', '.', 'getInstance', '(', ')', '.', 'newTuple', '(', 'input', '.', 'getAll', '(', ')', ')', ';']",0
@@ -133,7 +133,7 @@ TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", '
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'filter', 'a', 'by', '$', '1', '=', '=', ""'"", '3', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery20', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '(', '$', '1', '=', '=', ""'"", '3', ""'"", '?', '$', '2', ':', '$', '3', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery21', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", 'a', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'B', '=', 'load', ""'"", 'b', ""'"", ';', '""', ')', ';']",0
@@ -146,7 +146,7 @@ TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', 'C', '{',
 TestLogicalPlanBuilder.java,"['""', 'B', '=', 'order', 'B', 'by', '$', '0', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'generate', 'FLATTEN', '(', 'A', ')', ',', 'B', '.', '(', '$', '1', ',', '$', '2', ',', '$', '3', ')', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery22Fail', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", 'a', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'B', '=', 'group', 'A', 'by', '(', '*', ',', '$', '0', ')', ';', '""', ')', ';']",0
@@ -168,7 +168,7 @@ TestLogicalPlanBuilder.java,"['""', 'C', '=', 'FILTER', 'A', 'BY', '$', '2', '='
 TestLogicalPlanBuilder.java,"['""', 'B', '=', 'ARRANGE', 'B', 'BY', '$', '1', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'GENERATE', 'A', ',', 'FLATTEN', '(', 'B', '.', '$', '0', ')', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery23Fail', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", 'a', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'B', '=', 'load', ""'"", 'b', ""'"", ';', '""', ')', ';']",0
@@ -178,32 +178,32 @@ TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery24', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', 'a', 'generate', '(', '(', '$', '0', '=', '=', '$', '1', ')', '?', ""'"", 'a', ""'"", ':', '$', '2', ')', ',', '$', '4', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery25', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', '{', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'B', '=', 'FILTER', '$', '0', 'BY', '(', '(', '$', '1', '=', '=', '$', '2', ')', 'AND', '(', ""'"", 'a', ""'"", '<', ""'"", 'b', ""'"", ')', ')', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'generate', 'B', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery26', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '(', '(', 'NOT', '(', '(', '$', '1', '=', '=', '$', '2', ')', 'OR', '(', ""'"", 'a', ""'"", '<', ""'"", 'b', ""'"", ')', ')', ')', '?', ""'"", 'a', ""'"", ':', '$', '2', ')', ',', ""'"", 'x', ""'"", ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query27', 'and', 'Query28']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery27', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', '{', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'A', '=', 'DISTINCT', '$', '3', '.', '$', '1', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', 'generate', '""', '+', 'TestApplyFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', '$', '2', ',', '$', '1', '.', '(', '$', '1', ',', '$', '4', ')', ')', ';', '""', '+']",0
 TestLogicalPlanBuilder.java,"['""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery28', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '""', '+', 'TestApplyFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', '$', '2', ',', '""', '+', 'TestApplyFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', '$', '2', '.', '$', '3', ')', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery29', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'load', ""'"", 'myfile', ""'"", 'using', '""', '+', 'TestStorageFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ')', 'as', '(', 'col1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery30', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'load', ""'"", 'myfile', ""'"", 'using', '""', '+', 'TestStorageFunc', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ')', 'as', '(', 'col1', ',', 'col2', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'static', 'class', 'TestStorageFunc', 'implements', 'LoadFunc', '{']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'bindTo', '(', 'String', 'fileName', ',', 'BufferedPositionedInputStream', 'is', ',', 'long', 'offset', ',', 'long', 'end', ')', 'throws', 'IOException', '{']",0
 TestLogicalPlanBuilder.java,"['public', 'Tuple', 'getNext', '(', ')', 'throws', 'IOException', '{']",0
@@ -250,37 +250,37 @@ TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'Auto', '-', 'generated', 'metho
 TestLogicalPlanBuilder.java,"['return', 'null', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery31', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'load', ""'"", 'myfile', ""'"", 'as', '(', 'col1', ',', 'col2', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery32', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'myfile', ""'"", 'as', '(', 'col1', ',', 'col2', ':', 'tuple', '(', 'sub1', ',', 'sub2', ')', ',', 'col3', ':', 'tuple', '(', 'bag1', ')', ')', ')', 'generate', 'col1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery33', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'aCol1', ',', 'aCol2', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'B', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'bCol1', ',', 'bCol2', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'C', '=', 'cogroup', 'A', 'by', '(', 'aCol1', ')', ',', 'B', 'by', 'bCol1', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', 'C', 'generate', 'group', ',', 'A', '.', 'aCol1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', ':', 'Nested', 'schemas', 'don', ""'"", 't', 'work', 'now', '.', 'Probably', 'a', 'bug', 'in', 'the', 'new', 'parser', '.']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery34', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'aCol1', ',', 'aCol2', ':', 'tuple', '(', 'subCol1', ',', 'subCol2', ')', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'filter', 'A', 'by', 'aCol2', '=', '=', ""'"", '1', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'B', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'bCol1', ',', 'bCol2', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'cogroup', 'A', 'by', '(', 'aCol1', ')', ',', 'B', 'by', 'bCol1', ')', 'generate', 'A', '.', 'aCol2', ',', 'B', '.', 'bCol2', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery35', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", 'as', '(', 'col1', ',', 'col2', ')', ')', 'generate', 'col1', ',', 'col2', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery36', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'cogroup', '(', 'load', ""'"", 'a', ""'"", 'as', '(', 'col1', ',', 'col2', ')', ')', 'by', 'col1', ')', 'generate', '$', '1', '.', '(', 'col2', ',', 'col1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail37', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'A', '=', 'load', ""'"", 'a', ""'"", ';', 'asdasdas', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery38', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'cross', '(', 'load', ""'"", 'a', ""'"", ')', ',', '(', 'load', ""'"", 'b', ""'"", ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query39', 'and', 'Query40']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery39', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'url', ',', 'host', ',', 'rank', ')', ';', '""', ')', ';']",0
@@ -324,7 +324,7 @@ TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail43', '(', ')', '{'
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'cogroup', 'a', 'by', '(', 'name', ',', 'age', ')', ',', 'b', 'by', '(', 'height', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery44', '(', ')', '{']",0
@@ -399,12 +399,12 @@ TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'A', '=', 'load', ""'"", '
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'C', '=', 'select', 'A', '.', 'url', ',', 'A', '.', 'date', ',', 'SUM', '(', 'A', '.', 'hitCount', ')', 'from', 'A', 'group', 'by', 'url', ',', 'date', 'having', 'AVG', '(', 'A', '.', 'hitCount', ')', '>', ""'"", '6', ""'"", 'order', 'by', 'A', '.', 'date', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery57', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '(', '$', '1', '+', '$', '2', ')', ',', '(', '$', '1', '-', '$', '2', ')', ',', '(', '$', '1', '*', '$', '2', ')', ',', '(', '$', '1', '/', '$', '2', ')', ',', '(', '$', '1', '%', '$', '2', ')', ',', '-', '(', '$', '1', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery58', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'group', 'a', 'by', 'name', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', 'b', '{', 'd', '=', 'a', '.', 'name', ';', 'generate', 'group', ',', 'd', ';', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail58', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'url', ',', 'host', ',', 'rank', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'group', 'a', 'by', 'url', ';', '""', ')', ';']",0
@@ -415,22 +415,22 @@ TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery59', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'join', 'a', 'by', 'name', ',', 'b', 'by', 'name', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery60', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'cross', 'a', ',', 'b', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery61', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'union', 'a', ',', 'b', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery62', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'cross', 'a', ',', 'b', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'd', '=', 'order', 'c', 'by', 'b', ':', ':', 'name', ',', 'height', ',', 'a', ':', ':', 'gpa', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'e', '=', 'order', 'a', 'by', 'name', ',', 'age', ',', 'gpa', 'desc', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'f', '=', 'order', 'a', 'by', '$', '0', 'asc', ',', 'age', ',', 'gpa', 'desc', ';', '""', ')', ';']",0
@@ -441,7 +441,7 @@ TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail62', '(', ')', '{'
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'load', ""'"", 'b', ""'"", 'as', '(', 'name', ',', 'height', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'c', '=', 'cross', 'a', ',', 'b', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'd', '=', 'order', 'c', 'by', 'name', ',', 'b', ':', ':', 'name', ',', 'height', ',', 'a', ':', ':', 'gpa', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
@@ -449,11 +449,11 @@ TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery63', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'details', ':', 'tuple', '(', 'age', ',', 'gpa', ')', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'group', 'a', 'by', 'details', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'd', '=', 'foreach', 'b', 'generate', 'group', '.', 'age', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'e', '=', 'foreach', 'a', 'generate', 'name', ',', 'details', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail63', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'myfile', ""'"", 'as', '(', 'col1', ',', 'col2', ':', '(', 'sub1', ',', 'sub2', ')', ',', 'col3', ':', '(', 'bag1', ')', ')', ')', 'generate', 'col1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery64', '(', ')', '{']",0
@@ -461,12 +461,12 @@ TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", '
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'c', '=', 'load', ""'"", 'a', ""'"", 'as', '(', 'name', ',', 'details', ':', 'bag', '{', 'mytuple', ':', 'tuple', '(', 'age', ':', 'int', ',', 'gpa', ')', '}', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'group', 'a', 'by', 'details', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'd', '=', 'foreach', 'b', 'generate', 'group', '.', 'age', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'e', '=', 'foreach', 'a', 'generate', 'name', ',', 'details', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'f', '=', 'LOAD', ""'"", 'myfile', ""'"", 'AS', '(', 'garage', ':', 'bag', '{', 'tuple1', ':', 'tuple', '(', 'num_tools', ':', 'int', ')', '}', ',', 'links', ':', 'bag', '{', 'tuple2', ':', 'tuple', '(', 'websites', ':', 'chararray', ')', '}', ',', 'page', ':', 'bag', '{', 'something_stupid', ':', 'tuple', '(', 'yeah_double', ':', 'double', ')', '}', ',', 'coordinates', ':', 'bag', '{', 'another_tuple', ':', 'tuple', '(', 'ok_float', ':', 'float', ',', 'bite_the_array', ':', 'bytearray', ',', 'bag_of_unknown', ':', 'bag', '{', '}', ')', '}', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail64', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'myfile', ""'"", 'as', '(', 'col1', ',', 'col2', ':', 'bag', '{', 'age', ':', 'int', '}', ')', ')', 'generate', 'col1', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery65', '(', ')', '{']",0
@@ -560,7 +560,7 @@ TestLogicalPlanBuilder.java,"['+', '""', 'co', '=', 'order', 'cd', 'by', 'gpa', 
 TestLogicalPlanBuilder.java,"['+', '""', 'generate', 'group', ',', 'flatten', '(', 'co', ')', ';', '""']",0
 TestLogicalPlanBuilder.java,"['/', '/', '+', '""', 'generate', 'group', ',', 'flatten', '(', 'cd', ')', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery81', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'input1', ""'"", 'using', 'PigStorage', '(', ')', 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'split', 'a', 'into', 'b', 'if', 'name', 'lt', ""'"", 'f', ""'"", ',', 'c', 'if', '(', 'name', 'gte', ""'"", 'f', ""'"", 'and', 'name', 'lte', ""'"", 'h', ""'"", ')', ',', 'd', 'if', 'name', 'gt', ""'"", 'h', ""'"", ';', '""', ')', ';']",0
@@ -577,7 +577,7 @@ TestLogicalPlanBuilder.java,"['+', '""', 'c1', '=', 'order', '$', '1', 'by', '*'
 TestLogicalPlanBuilder.java,"['+', '""', 'c2', '=', '$', '1', '.', '$', '0', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', 'generate', 'flatten', '(', 'c1', ')', ',', 'c2', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQueryFail82', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'myfile', ""'"", ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'group', 'a', 'by', '$', '0', ';', '""', ')', ';']",0
@@ -586,7 +586,7 @@ TestLogicalPlanBuilder.java,"['+', '""', 'c1', '=', 'order', '$', '1', 'by', '*'
 TestLogicalPlanBuilder.java,"['+', '""', 'c2', '=', '$', '1', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', 'generate', 'flatten', '(', 'c1', ')', ',', 'c2', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['}', 'catch', '(', 'AssertionFailedError', 'e', ')', '{']",0
 TestLogicalPlanBuilder.java,"['assertTrue', '(', 'e', '.', 'getMessage', '(', ')', '.', 'contains', '(', '""', 'Exception', '""', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery83', '(', ')', '{']",0
@@ -600,7 +600,7 @@ TestLogicalPlanBuilder.java,"['+', '""', 'cd', '=', 'distinct', 'cp', ';', '""']
 TestLogicalPlanBuilder.java,"['+', '""', 'co', '=', 'order', 'cd', 'by', 'gpa', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', 'generate', 'group', ',', 'flatten', '(', 'co', ')', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery84', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'input1', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'b', '=', 'filter', 'a', 'by', 'age', '<', ""'"", '20', ""'"", ';', '""', ')', ';']",0
@@ -612,7 +612,7 @@ TestLogicalPlanBuilder.java,"['+', '""', 'cd', '=', 'distinct', 'cp', ';', '""']
 TestLogicalPlanBuilder.java,"['+', '""', 'co', '=', 'order', 'cd', 'by', 'gpa', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', 'generate', 'group', ',', 'flatten', '(', 'co', ')', ';', '""']",0
 TestLogicalPlanBuilder.java,"['+', '""', '}', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery85', '(', ')', 'throws', 'FrontendException', '{']",0
 TestLogicalPlanBuilder.java,"['LogicalPlan', 'lp', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'myfile', ""'"", 'as', '(', 'name', ',', 'age', ',', 'gpa', ')', ';', '""', ')', ';']",0
@@ -933,9 +933,9 @@ TestLogicalPlanBuilder.java,"['assertTrue', '(', 'Schema', '.', 'equals', '(', '
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery101', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'test', 'usage', 'of', 'an', 'alias', 'from', 'define']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'define', 'FUNC', 'ARITY', '(', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['query', '=', '""', 'foreach', '(', 'load', ""'"", 'data', ""'"", ')', 'generate', 'FUNC', '(', '$', '0', ')', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery102', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'test', 'basic', 'store']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', '""', 'a', '=', 'load', ""'"", 'a', ""'"", ';', '""', ')', ';']",0
@@ -2156,7 +2156,7 @@ Main.java,"['/', '/', 'TODO', 'sgroschupf', 'using', 'system', 'properties', 'is
 Main.java,"['String', 'gateway', '=', 'System', '.', 'getProperty', '(', '""', 'ssh', '.', 'gateway', '""', ')', ';']",0
 Main.java,"['if', '(', 'gateway', '=', '=', 'null', '|', '|', 'gateway', '.', 'length', '(', ')', '=', '=', '0', ')', '{']",0
 Main.java,"['properties', '.', 'setProperty', '(', '""', 'hod', '.', 'server', '""', ',', '""', 'local', '""', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['properties', '.', 'setProperty', '(', '""', 'hod', '.', 'server', '""', ',', 'System', '.', 'getProperty', '(', '""', 'ssh', '.', 'gateway', '""', ')', ')', ';']",0
 Main.java,"['case', ""'"", 'p', ""'"", ':']",0
 Main.java,"['String', 'val', '=', 'opts', '.', 'getValStr', '(', ')', ';']",0
@@ -2244,7 +2244,7 @@ Main.java,"['grunt', '.', 'setConsoleReader', '(', 'reader', ')', ';']",0
 Main.java,"['gruntCalled', '=', 'true', ';']",0
 Main.java,"['grunt', '.', 'run', '(', ')', ';']",0
 Main.java,"['rc', '=', '0', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['/', '/', 'They', 'have', 'a', 'pig', 'script', 'they', 'want', 'us', 'to', 'run', '.']",0
 Main.java,"['if', '(', 'remainders', '.', 'length', '>', '1', ')', '{']",0
 Main.java,"['throw', 'new', 'RuntimeException', '(', '""', 'You', 'can', 'only', 'run', 'one', 'pig', 'script', '""']",0
@@ -2277,7 +2277,7 @@ Main.java,"['rc', '=', '2', ';']",0
 Main.java,"['}', 'catch', '(', 'PigException', 'pe', ')', '{']",0
 Main.java,"['if', '(', 'pe', '.', 'retriable', '(', ')', ')', '{']",0
 Main.java,"['rc', '=', '1', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['rc', '=', '2', ';']",0
 Main.java,"['if', '(', '!', 'gruntCalled', ')', '{']",0
 Main.java,"['LogUtils', '.', 'writeLog', '(', 'pe', ',', 'logFileName', ',', 'log', ',', 'verbose', ')', ';']",0
@@ -2317,7 +2317,7 @@ Main.java,"['""', '%', 'd', '[', '%', 't', ']', '%', '-', '5p', '%', 'c', '-', '
 Main.java,"['props', '.', 'setProperty', '(', '""', 'log4j', '.', 'appender', '.', 'PIGCONSOLE', '.', 'target', '""', ',']",0
 Main.java,"['""', 'System', '.', 'err', '""', ')', ';']",0
 Main.java,"['PropertyConfigurator', '.', 'configure', '(', 'props', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['/', '/', 'brief', 'logging', '-', 'no', 'timestamps']",0
 Main.java,"['Properties', 'props', '=', 'new', 'Properties', '(', ')', ';']",0
 Main.java,"['props', '.', 'setProperty', '(', '""', 'log4j', '.', 'rootLogger', '""', ',', '""', 'INFO', ',', 'PIGCONSOLE', '""', ')', ';']",0
@@ -2342,7 +2342,7 @@ Main.java,"['BufferedWriter', 'fw', '=', 'new', 'BufferedWriter', '(', 'new', 'F
 Main.java,"['psp', '.', 'genSubstitutedFile', '(', 'origPigScript', ',', 'fw', ',', 'params', '.', 'size', '(', ')', '>', '0', '?', 'params', '.', 'toArray', '(', 'type1', ')', ':', 'null', ',']",0
 Main.java,"['paramFiles', '.', 'size', '(', ')', '>', '0', '?', 'paramFiles', '.', 'toArray', '(', 'type2', ')', ':', 'null', ')', ';']",0
 Main.java,"['return', 'new', 'BufferedReader', '(', 'new', 'FileReader', '(', 'scriptFile', ')', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['StringWriter', 'writer', '=', 'new', 'StringWriter', '(', ')', ';']",0
 Main.java,"['psp', '.', 'genSubstitutedFile', '(', 'origPigScript', ',', 'writer', ',', 'params', '.', 'size', '(', ')', '>', '0', '?', 'params', '.', 'toArray', '(', 'type1', ')', ':', 'null', ',']",0
 Main.java,"['paramFiles', '.', 'size', '(', ')', '>', '0', '?', 'paramFiles', '.', 'toArray', '(', 'type2', ')', ':', 'null', ')', ';']",0
@@ -2400,34 +2400,34 @@ Main.java,"['/', '/', 'append', 'the', 'default', 'file', 'name', 'to', 'the', '
 Main.java,"['if', '(', 'logFile', '.', 'isDirectory', '(', ')', ')', '{']",0
 Main.java,"['if', '(', 'logFile', '.', 'canWrite', '(', ')', ')', '{']",0
 Main.java,"['logFileName', '=', 'logFile', '.', 'getCanonicalPath', '(', ')', '+', 'File', '.', 'separator', '+', 'defaultLogFileName', ';']",0
-Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",1
+Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Could', 'not', 'compute', 'canonical', 'path', 'to', 'the', 'log', 'file', '""', '+', 'ioe', '.', 'getMessage', '(', ')', ')', ';']",0
 Main.java,"['return', 'logFileName', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Need', 'write', 'permission', 'in', 'the', 'directory', ':', '""', '+', 'logFileName', '+', '""', 'to', 'create', 'log', 'file', '.', '""', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['/', '/', 'we', 'have', 'a', 'relative', 'path', 'or', 'an', 'absolute', 'path', 'to', 'the', 'log', 'file']",0
 Main.java,"['/', '/', 'check', 'if', 'we', 'can', 'write', 'to', 'the', 'directory', 'where', 'this', 'file', 'is', '/', 'will', 'be', 'stored']",0
 Main.java,"['if', '(', 'logFile', '.', 'exists', '(', ')', ')', '{']",0
 Main.java,"['if', '(', 'logFile', '.', 'canWrite', '(', ')', ')', '{']",0
 Main.java,"['logFileName', '=', 'new', 'File', '(', 'logFileName', ')', '.', 'getCanonicalPath', '(', ')', ';']",0
-Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",1
+Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Could', 'not', 'compute', 'canonical', 'path', 'to', 'the', 'log', 'file', '""', '+', 'ioe', '.', 'getMessage', '(', ')', ')', ';']",0
 Main.java,"['return', 'logFileName', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['/', '/', 'do', 'not', 'have', 'write', 'permissions', 'for', 'the', 'log', 'file']",0
 Main.java,"['/', '/', 'bail', 'out', 'with', 'an', 'error', 'message']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Cannot', 'write', 'to', 'file', ':', '""', '+', 'logFileName', '+', '""', '.', 'Need', 'write', 'permission', '.', '""', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['logFile', '=', 'logFile', '.', 'getParentFile', '(', ')', ';']",0
 Main.java,"['if', '(', 'logFile', '!', '=', 'null', ')', '{']",0
 Main.java,"['/', '/', 'if', 'the', 'directory', 'is', 'writable', 'we', 'are', 'good', 'to', 'go']",0
 Main.java,"['if', '(', 'logFile', '.', 'canWrite', '(', ')', ')', '{']",0
 Main.java,"['logFileName', '=', 'new', 'File', '(', 'logFileName', ')', '.', 'getCanonicalPath', '(', ')', ';']",0
-Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",1
+Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Could', 'not', 'compute', 'canonical', 'path', 'to', 'the', 'log', 'file', '""', '+', 'ioe', '.', 'getMessage', '(', ')', ')', ';']",0
 Main.java,"['return', 'logFileName', ';']",0
-Main.java,"['}', 'else', '{']",1
+Main.java,"['}', 'else', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Need', 'write', 'permission', 'in', 'the', 'directory', ':', '""', '+', 'logFile', '+', '""', 'to', 'create', 'log', 'file', '.', '""', ')', ';']",0
 Main.java,"['}', '/', '/', 'end', 'if', 'logFile', '!', '=', 'null', 'else', 'is', 'the', 'default', 'in', 'fall', 'through']",0
 Main.java,"['}', '/', '/', 'end', 'else', 'part', 'of', 'logFile', '.', 'exists', '(', ')']",0
@@ -2491,10 +2491,10 @@ DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size',
 DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",1
 DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",1
 DataReaderWriter.java,"['public', 'static', 'String', 'bytesToBigCharArray', '(', 'DataInput', 'in', ')', 'throws', 'IOException', '{']",0
-DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",1
-DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",1
-DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",1
-DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",1
+DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",0
+DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",0
+DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",0
+DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",0
 DataReaderWriter.java,"['public', 'static', 'Object', 'readDatum', '(', 'DataInput', 'in', ')', 'throws', 'IOException', ',', 'ExecException', '{']",0
 DataReaderWriter.java,"['/', '/', 'Read', 'the', 'data', 'type']",0
 DataReaderWriter.java,"['byte', 'b', '=', 'in', '.', 'readByte', '(', ')', ';']",0
@@ -2518,9 +2518,9 @@ DataReaderWriter.java,"['return', 'new', 'Boolean', '(', 'in', '.', 'readBoolean
 DataReaderWriter.java,"['case', 'DataType', '.', 'BYTE', ':']",0
 DataReaderWriter.java,"['return', 'new', 'Byte', '(', 'in', '.', 'readByte', '(', ')', ')', ';']",0
 DataReaderWriter.java,"['case', 'DataType', '.', 'BYTEARRAY', ':', '{']",0
-DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",1
-DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",1
-DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",1
+DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",0
+DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",0
+DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",0
 DataReaderWriter.java,"['return', 'new', 'DataByteArray', '(', 'ba', ')', ';']",0
 DataReaderWriter.java,"['case', 'DataType', '.', 'BIGCHARARRAY', ':']",0
 DataReaderWriter.java,"['return', 'bytesToBigCharArray', '(', 'in', ')', ';']",0
@@ -3487,7 +3487,7 @@ PigServer.java,"['if', '(', 'alias', '=', '=', 'null', ')', '{']",0
 PigServer.java,"['/', '/', 'a', 'store', 'prompted', 'the', 'execution', '-', 'so', 'return']",0
 PigServer.java,"['/', '/', 'the', 'entire', 'logical', 'plan']",0
 PigServer.java,"['return', 'lp', ';']",0
-PigServer.java,"['}', 'else', '{']",1
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['/', '/', 'return', 'the', 'logical', 'plan', 'corresponding', 'to', 'the']",0
 PigServer.java,"['/', '/', 'alias', 'supplied']",0
 PigServer.java,"['LogicalOperator', 'op', '=', 'cloneAliasOp', '.', 'get', '(', 'alias', ')', ';']",0
@@ -3538,7 +3538,7 @@ PigServer.java,"['ExecJob', 'job', '=', 'store', '(', 'id', ',', 'FileLocalizer'
 PigServer.java,"['/', '/', 'invocation', 'of', '""', 'execute', '""', 'is', 'synchronous', '!']",0
 PigServer.java,"['if', '(', 'job', '.', 'getStatus', '(', ')', '=', '=', 'JOB_STATUS', '.', 'COMPLETED', ')', '{']",0
 PigServer.java,"['return', 'job', '.', 'getResults', '(', ')', ';']",0
-PigServer.java,"['}', 'else', '{']",1
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['throw', 'new', 'IOException', '(', '""', 'Job', 'terminated', 'with', 'anomalous', 'status', '""']",0
 PigServer.java,"['+', 'job', '.', 'getStatus', '(', ')', '.', 'toString', '(', ')', ')', ';']",0
 PigServer.java,"['}', 'catch', '(', 'Exception', 'e', ')', '{']",0
@@ -3574,7 +3574,7 @@ PigServer.java,"['List', '<', 'LogicalOperator', '>', 'leaves', '=', 'lp', '.', 
 PigServer.java,"['LogicalOperator', 'leaf', '=', 'null', ';']",0
 PigServer.java,"['if', '(', 'leaves', '.', 'size', '(', ')', '=', '=', '1', ')', '{']",0
 PigServer.java,"['leaf', '=', 'leaves', '.', 'get', '(', '0', ')', ';']",0
-PigServer.java,"['}', 'else', '{']",1
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['for', '(', 'Iterator', '<', 'LogicalOperator', '>', 'it', '=', 'leaves', '.', 'iterator', '(', ')', ';', 'it', '.', 'hasNext', '(', ')', ';', ')', '{']",0
 PigServer.java,"['LogicalOperator', 'leafOp', '=', 'it', '.', 'next', '(', ')', ';']",0
 PigServer.java,"['if', '(', 'leafOp', '.', 'getAlias', '(', ')', '.', 'equals', '(', 'id', ')', ')']",0
@@ -3596,7 +3596,7 @@ PigServer.java,"['List', '<', 'LogicalOperator', '>', 'leaves', '=', 'lp', '.', 
 PigServer.java,"['LogicalOperator', 'leaf', '=', 'null', ';']",0
 PigServer.java,"['if', '(', 'leaves', '.', 'size', '(', ')', '=', '=', '1', ')', '{']",0
 PigServer.java,"['leaf', '=', 'leaves', '.', 'get', '(', '0', ')', ';']",0
-PigServer.java,"['}', 'else', '{']",1
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['for', '(', 'Iterator', '<', 'LogicalOperator', '>', 'it', '=', 'leaves', '.', 'iterator', '(', ')', ';', 'it', '.', 'hasNext', '(', ')', ';', ')', '{']",0
 PigServer.java,"['LogicalOperator', 'leafOp', '=', 'it', '.', 'next', '(', ')', ';']",0
 PigServer.java,"['if', '(', 'leafOp', '.', 'getAlias', '(', ')', '.', 'equals', '(', 'alias', ')', ')']",0
@@ -3732,7 +3732,7 @@ PigServer.java,"['/', '/', 'throw', '.']",0
 PigServer.java,"['caught', '=', 'fe', ';']",0
 PigServer.java,"['if', '(', 'aggregateWarning', ')', '{']",0
 PigServer.java,"['CompilationMessageCollector', '.', 'logMessages', '(', 'collector', ',', 'MessageType', '.', 'Warning', ',', 'aggregateWarning', ',', 'log', ')', ';']",0
-PigServer.java,"['}', 'else', '{']",1
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['for', '(', 'Enum', 'type', ':', 'MessageType', '.', 'values', '(', ')', ')', '{']",0
 PigServer.java,"['CompilationMessageCollector', '.', 'logAllMessages', '(', 'collector', ',', 'log', ')', ';']",0
 PigServer.java,"['if', '(', 'caught', '!', '=', 'null', ')', '{']",0
@@ -4006,7 +4006,7 @@ GruntParser.java,"['if', '(', 'mDfs', '.', 'isContainer', '(', 'curElem', '.', '
 GruntParser.java,"['System', '.', 'out', '.', 'println', '(', 'curElem', '.', 'toString', '(', ')', '+', '""', '\\', 't', '<', 'dir', '>', '""', ')', ';']",0
 GruntParser.java,"['}', 'else', '{']",1
 GruntParser.java,"['printLengthAndReplication', '(', 'curElem', ')', ';']",0
-GruntParser.java,"['}', 'else', '{']",1
+GruntParser.java,"['}', 'else', '{']",0
 GruntParser.java,"['printLengthAndReplication', '(', 'pathDescriptor', ')', ';']",0
 GruntParser.java,"['catch', '(', 'DataStorageException', 'e', ')', '{']",0
 GruntParser.java,"['throw', 'WrappedIOException', '.', 'wrap', '(', '""', 'Failed', 'to', 'LS', 'on', '""', '+', 'path', ',', 'e', ')', ';']",0
@@ -4383,7 +4383,7 @@ Launcher.java,"['log', ',', 'false', ',', 'null', ',', 'false', ',', 'false', ')
 Launcher.java,"['int', 'errCode', '=', '2997', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Unable', 'to', 'recreate', 'exception', 'from', 'backed', 'error', ':', '""', '+', 'firstLine', ';']",0
 Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ',', 'e1', ')', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['log', '.', 'debug', '(', '""', 'Error', 'message', 'from', 'task', '(', '""', '+', 'type', '+', '""', ')', '""', '+']",0
 Launcher.java,"['reports', '[', 'i', ']', '.', 'getTaskID', '(', ')', '+', 'msgs', '[', 'j', ']', ')', ';']",0
 Launcher.java,"['/', '/', 'if', 'its', 'a', 'failed', 'job', 'then', 'check', 'if', 'there', 'is', 'more', 'than', 'one', 'exception']",0
@@ -4398,7 +4398,7 @@ Launcher.java,"['LogUtils', '.', 'writeLog', '(', 'exceptions', '.', 'get', '(',
 Launcher.java,"['throw', 'exceptions', '.', 'get', '(', '0', ')', ';']",0
 Launcher.java,"['}', 'else', 'if', '(', 'exceptions', '.', 'size', '(', ')', '=', '=', '1', ')', '{']",0
 Launcher.java,"['throw', 'exceptions', '.', 'get', '(', '0', ')', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['int', 'errCode', '=', '2115', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Internal', 'error', '.', 'Expected', 'to', 'throw', 'exception', 'from', 'the', 'backend', '.', 'Did', 'not', 'find', 'any', 'exception', 'to', 'throw', '.', '""', ';']",0
 Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
@@ -4434,7 +4434,7 @@ Launcher.java,"['String', 'msg', '=', '""', 'During', 'execution', ',', 'encount
 Launcher.java,"['ExecException', 'ee', '=', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'REMOTE_ENVIRONMENT', ',', 't', ')', ';']",0
 Launcher.java,"['ee', '.', 'setStackTrace', '(', 't', '.', 'getStackTrace', '(', ')', ')', ';']",0
 Launcher.java,"['return', 'ee', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['pigException', '=', 'false', ';']",0
 Launcher.java,"['if', '(', 'outOfMemory', ')', '{']",0
 Launcher.java,"['outOfMemory', '=', 'false', ';']",0
@@ -4493,7 +4493,7 @@ Launcher.java,"['String', 'className', '=', 'ste', '.', 'getClassName', '(', ')'
 Launcher.java,"['Matcher', 'pigExceptionMatcher', '=', 'pigExceptionPattern', '.', 'matcher', '(', 'className', ')', ';']",0
 Launcher.java,"['if', '(', 'pigExceptionMatcher', '.', 'find', '(', ')', ')', '{']",0
 Launcher.java,"['pigException', '=', 'true', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['Matcher', 'moreElementMatcher', '=', 'moreElementPattern', '.', 'matcher', '(', 'stackTraceLines', '[', 'lineNum', ']', ')', ';']",0
 Launcher.java,"['if', '(', 'moreElementMatcher', '.', 'find', '(', ')', ')', '{']",0
 Launcher.java,"['+', '+', 'lineNum', ';']",0
@@ -4539,11 +4539,11 @@ Launcher.java,"['return', '(', 'Throwable', ')', 'object', ';']",0
 Launcher.java,"['}', 'else', '{', '/', '/', 'else', 'for', 'if', '(', 'exceptionName', '!', '=', 'null', ')']",0
 Launcher.java,"['int', 'errCode', '=', '2055', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Did', 'not', 'find', 'exception', 'name', 'to', 'create', 'exception', 'from', 'string', ':', '""', '+', 'stackTraceLines', '.', 'toString', '(', ')', ';']",0
-Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
+Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['}', 'else', '{', '/', '/', 'else', 'for', 'if', '(', 'lines', '.', 'length', '>', '0', ')']",0
 Launcher.java,"['int', 'errCode', '=', '2056', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Cannot', 'create', 'exception', 'from', 'empty', 'string', '.', '""', ';']",0
-Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
+Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['/', '*', '*']",0
 Launcher.java,"['public', 'StackTraceElement', 'getStackTraceElement', '(', 'String', 'line', ')', 'throws', 'Exception', '{']",0
 Launcher.java,"['String', '[', ']', 'items', ';']",0
@@ -4554,10 +4554,10 @@ Launcher.java,"['/', '/', 'org', '.', 'apache', '.', 'pig', '.', 'backend', '.',
 Launcher.java,"['String', 'content', '=', 'null', ';']",0
 Launcher.java,"['if', '(', 'contentMatcher', '.', 'find', '(', ')', ')', '{']",0
 Launcher.java,"['content', '=', 'line', '.', 'substring', '(', 'contentMatcher', '.', 'start', '(', ')', ')', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['int', 'errCode', '=', '2057', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Did', 'not', 'find', 'fully', 'qualified', 'method', 'name', 'to', 'reconstruct', 'stack', 'trace', ':', '""', '+', 'line', ';']",0
-Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
+Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['Matcher', 'qualifiedMethodNameMatcher', '=', 'qualifiedMethodNamePattern', '.', 'matcher', '(', 'content', ')', ';']",0
 Launcher.java,"['/', '/', 'org', '.', 'apache', '.', 'pig', '.', 'backend', '.', 'hadoop', '.', 'executionengine', '.', 'mapReduceLayer', '.', 'PigMapOnly', '$', 'Map', '.', 'map']",0
 Launcher.java,"['String', 'qualifiedMethodName', '=', 'null', ';']",0
@@ -4566,10 +4566,10 @@ Launcher.java,"['String', 'fileDetails', '=', 'null', ';']",0
 Launcher.java,"['if', '(', 'qualifiedMethodNameMatcher', '.', 'find', '(', ')', ')', '{']",0
 Launcher.java,"['qualifiedMethodName', '=', 'qualifiedMethodNameMatcher', '.', 'group', '(', ')', ';']",0
 Launcher.java,"['fileDetails', '=', 'content', '.', 'substring', '(', 'qualifiedMethodNameMatcher', '.', 'end', '(', ')', '+', '1', ')', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['int', 'errCode', '=', '2057', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Did', 'not', 'find', 'fully', 'qualified', 'method', 'name', 'to', 'reconstruct', 'stack', 'trace', ':', '""', '+', 'line', ';']",0
-Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
+Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['/', '/', 'From', 'the', 'fully', 'qualified', 'method', 'name', ',', 'extract', 'the', 'declaring', 'class', 'and', 'method', 'name']",0
 Launcher.java,"['items', '=', 'qualifiedMethodName', '.', 'split', '(', '""', '\\', '\\', '.', '""', ')', ';']",0
 Launcher.java,"['/', '/', 'initialize', 'the', 'declaringClass', '(', 'to', 'org', 'in', 'most', 'cases', ')']",0
@@ -4595,7 +4595,7 @@ Launcher.java,"['private', 'String', 'getFirstLineFromMessage', '(', 'String', '
 Launcher.java,"['String', '[', ']', 'messages', '=', 'message', '.', 'split', '(', 'newLine', ')', ';']",0
 Launcher.java,"['if', '(', 'messages', '.', 'length', '>', '0', ')', '{']",0
 Launcher.java,"['return', 'messages', '[', '0', ']', ';']",0
-Launcher.java,"['}', 'else', '{']",1
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['return', 'new', 'String', '(', 'message', ')', ';']",0
 TestGrunt.java,"['package', 'org', '.', 'apache', '.', 'pig', '.', 'test', ';']",0
 TestGrunt.java,"['import', 'org', '.', 'junit', '.', 'Test', ';']",0

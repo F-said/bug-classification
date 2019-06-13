@@ -54,8 +54,12 @@ for filename in os.listdir('data'):
         joined_sentences = joinstatement(filtered_sentences)
 
         for sentence in joined_sentences:
+            # If sentence shows up in buggy code
             if sentence in buggy_dict[filename]:
+                # Append as bug
                 buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 1}, ignore_index=True)
+                # And then remove, since if bug showed up more than once it would also be present multiple times in list
+                buggy_dict[filename].remove(sentence)
             else:
                 buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0}, ignore_index=True)
 
