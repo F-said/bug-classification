@@ -62,8 +62,16 @@ for filename in os.listdir('data'):
 
                 # If statement already appeared in file, classify statement in that file as non-bug
                 # and discard code from buggy_dict, so that all future statements will be classified as non-bugs
-                if sentence in file_bugs["Statement"]:
+                if sentence in list(file_bugs["Statement"]):
                     # Append as non-bug
+                    buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0},
+                                                         ignore_index=True)
+
+                    # Classify previously recorded statement as non-bug by removing previous and adding new
+                    drop_ind = buggy_code_df[(buggy_code_df["File"] == filename) & (buggy_code_df["Bug"] == 1) &
+                                             (buggy_code_df["Statement"].astype(str) == str(sentence))].index
+                    buggy_code_df = buggy_code_df.drop(drop_ind)
+
                     buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0},
                                                          ignore_index=True)
 
