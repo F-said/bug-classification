@@ -42,8 +42,8 @@ for file in buggy_dict.keys():
 
     buggy_dict[file] = joined_sentences
 
-# For each file in data classify as bug if line of code appears in dictionary, with file name as the key and with line
-# of code in the list
+# For each line in data, classify as bug if line of code appears in buggy dictionary, with file name as the key and
+# with line of code in the list
 for filename in os.listdir('data'):
     # Open file to read and record statements
     with open(data_path + filename, 'r') as f:
@@ -53,15 +53,29 @@ for filename in os.listdir('data'):
         filtered_sentences = [sent for sent in sents if filterNonsense(sent)]
         joined_sentences = joinstatement(filtered_sentences)
 
+        # For each statement
         for sentence in joined_sentences:
-            # If sentence shows up in buggy code
+            # If statement shows up in buggy code
             if sentence in buggy_dict[filename]:
-                # Append as bug
-                buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 1}, ignore_index=True)
-                # And then remove, since if bug showed up more than once it would also be present multiple times in list
-                buggy_dict[filename].remove(sentence)
+                # Get buggy lines of this specific file
+                file_bugs = buggy_code_df.loc[buggy_code_df["File"] == filename]
+
+                # If statement already appeared in file, classify statement in that file as non-bug
+                # and discard code from buggy_dict, so that all future statements will be classified as non-bugs
+                if sentence in file_bugs["Statement"]:
+                    # Append as non-bug
+                    buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0},
+                                                         ignore_index=True)
+
+                    buggy_dict[filename].remove(sentence)
+                # Otherwise append as bug
+                else:
+                    buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 1},
+                                                         ignore_index=True)
             else:
-                buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0}, ignore_index=True)
+                # If a regular line of code, append as non-bug
+                buggy_code_df = buggy_code_df.append({'File': filename, 'Statement': sentence, 'Bug': 0},
+                                                     ignore_index=True)
 
 # Save as csv file
 buggy_code_df.to_csv(path_or_buf="bug-classification.csv", index=False)
