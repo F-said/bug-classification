@@ -39,9 +39,9 @@ TestLogicalPlanBuilder.java,"['public', 'class', 'TestLogicalPlanBuilder', 'exte
 TestLogicalPlanBuilder.java,"['private', 'final', 'Log', 'log', '=', 'LogFactory', '.', 'getLog', '(', 'getClass', '(', ')', ')', ';']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery1', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", ')', 'generate', '$', '1', ',', '$', '2', ';', '""', ';']",0
-TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",1
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery2', '(', ')', '{']",0
 TestLogicalPlanBuilder.java,"['String', 'query', '=', '""', 'foreach', '(', 'load', ""'"", 'a', ""'"", 'using', '""', '+', 'PigStorage', '.', 'class', '.', 'getName', '(', ')', '+', '""', '(', ""'"", ':', ""'"", ')', ')', 'generate', '$', '1', ',', ""'"", 'aoeuaoeu', ""'"", ';', '""', ';']",0
+TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['buildPlan', '(', 'query', ')', ';']",0
 TestLogicalPlanBuilder.java,"['/', '/', 'TODO', 'FIX', 'Query3', 'and', 'Query4']",0
 TestLogicalPlanBuilder.java,"['public', 'void', 'testQuery3', '(', ')', '{']",0
@@ -2146,7 +2146,6 @@ Main.java,"['/', '/', 'and', 'sets', 'up', 'the', 'file', 'to', 'store', 'the', 
 Main.java,"['String', 'logFileParameter', '=', 'opts', '.', 'getValStr', '(', ')', ';']",0
 Main.java,"['if', '(', 'logFileParameter', '!', '=', 'null', '&', '&', 'logFileParameter', '.', 'length', '(', ')', '>', '0', ')', '{']",0
 Main.java,"['logFileName', '=', 'validateLogFile', '(', 'logFileParameter', ',', 'null', ')', ';']",0
-Main.java,"['}', 'else', '{']",1
 Main.java,"['logFileName', '=', 'validateLogFile', '(', 'logFileName', ',', 'null', ')', ';']",0
 Main.java,"['properties', '.', 'setProperty', '(', '""', 'pig', '.', 'logfile', '""', ',', 'logFileName', ')', ';']",0
 Main.java,"['case', ""'"", 'm', ""'"", ':']",0
@@ -2156,6 +2155,7 @@ Main.java,"['/', '/', 'TODO', 'sgroschupf', 'using', 'system', 'properties', 'is
 Main.java,"['String', 'gateway', '=', 'System', '.', 'getProperty', '(', '""', 'ssh', '.', 'gateway', '""', ')', ';']",0
 Main.java,"['if', '(', 'gateway', '=', '=', 'null', '|', '|', 'gateway', '.', 'length', '(', ')', '=', '=', '0', ')', '{']",0
 Main.java,"['properties', '.', 'setProperty', '(', '""', 'hod', '.', 'server', '""', ',', '""', 'local', '""', ')', ';']",0
+Main.java,"['}', 'else', '{']",0
 Main.java,"['}', 'else', '{']",0
 Main.java,"['properties', '.', 'setProperty', '(', '""', 'hod', '.', 'server', '""', ',', 'System', '.', 'getProperty', '(', '""', 'ssh', '.', 'gateway', '""', ')', ')', ';']",0
 Main.java,"['case', ""'"", 'p', ""'"", ':']",0
@@ -2388,7 +2388,6 @@ Main.java,"['File', 'scriptFile', '=', 'new', 'File', '(', 'scriptName', ')', ';
 Main.java,"['if', '(', '!', 'scriptFile', '.', 'isDirectory', '(', ')', ')', '{']",0
 Main.java,"['String', 'scriptFileAbsPath', ';']",0
 Main.java,"['scriptFileAbsPath', '=', 'scriptFile', '.', 'getCanonicalPath', '(', ')', ';']",0
-Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",1
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Could', 'not', 'compute', 'canonical', 'path', 'to', 'the', 'script', 'file', '""', '+', 'ioe', '.', 'getMessage', '(', ')', ')', ';']",0
 Main.java,"['strippedDownScriptName', '=', 'getFileFromCanonicalPath', '(', 'scriptFileAbsPath', ')', ';']",0
 Main.java,"['String', 'defaultLogFileName', '=', '(', 'strippedDownScriptName', '=', '=', 'null', '?', '""', 'pig_', '""', ':', 'strippedDownScriptName', ')', '+', 'new', 'Date', '(', ')', '.', 'getTime', '(', ')', '+', '""', '.', 'log', '""', ';']",0
@@ -2400,6 +2399,7 @@ Main.java,"['/', '/', 'append', 'the', 'default', 'file', 'name', 'to', 'the', '
 Main.java,"['if', '(', 'logFile', '.', 'isDirectory', '(', ')', ')', '{']",0
 Main.java,"['if', '(', 'logFile', '.', 'canWrite', '(', ')', ')', '{']",0
 Main.java,"['logFileName', '=', 'logFile', '.', 'getCanonicalPath', '(', ')', '+', 'File', '.', 'separator', '+', 'defaultLogFileName', ';']",0
+Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",0
 Main.java,"['}', 'catch', '(', 'IOException', 'ioe', ')', '{']",0
 Main.java,"['throw', 'new', 'AssertionError', '(', '""', 'Could', 'not', 'compute', 'canonical', 'path', 'to', 'the', 'log', 'file', '""', '+', 'ioe', '.', 'getMessage', '(', ')', ')', ';']",0
 Main.java,"['return', 'logFileName', ';']",0
@@ -2479,7 +2479,6 @@ DataReaderWriter.java,"['DataBag', 'bag', '=', 'mBagFactory', '.', 'newDefaultBa
 DataReaderWriter.java,"['bag', '.', 'readFields', '(', 'in', ')', ';']",1
 DataReaderWriter.java,"['return', 'bag', ';']",1
 DataReaderWriter.java,"['public', 'static', 'Map', '<', 'Object', ',', 'Object', '>', 'bytesToMap', '(', 'DataInput', 'in', ')', 'throws', 'IOException', '{']",0
-DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",1
 DataReaderWriter.java,"['Map', '<', 'Object', ',', 'Object', '>', 'm', '=', 'new', 'HashMap', '<', 'Object', ',', 'Object', '>', '(', 'size', ')', ';']",1
 DataReaderWriter.java,"['for', '(', 'int', 'i', '=', '0', ';', 'i', '<', 'size', ';', 'i', '+', '+', ')', '{']",1
 DataReaderWriter.java,"['Object', 'key', '=', 'readDatum', '(', 'in', ')', ';']",1
@@ -2487,13 +2486,14 @@ DataReaderWriter.java,"['m', '.', 'put', '(', 'key', ',', 'readDatum', '(', 'in'
 DataReaderWriter.java,"['return', 'm', ';']",1
 DataReaderWriter.java,"['public', 'static', 'String', 'bytesToCharArray', '(', 'DataInput', 'in', ')', 'throws', 'IOException', '{']",0
 DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readUnsignedShort', '(', ')', ';']",1
-DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",1
-DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",1
-DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",1
 DataReaderWriter.java,"['public', 'static', 'String', 'bytesToBigCharArray', '(', 'DataInput', 'in', ')', 'throws', 'IOException', '{']",0
 DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",0
+DataReaderWriter.java,"['int', 'size', '=', 'in', '.', 'readInt', '(', ')', ';']",0
+DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",0
 DataReaderWriter.java,"['byte', '[', ']', 'ba', '=', 'new', 'byte', '[', 'size', ']', ';']",0
 DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",0
+DataReaderWriter.java,"['in', '.', 'readFully', '(', 'ba', ')', ';']",0
+DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",0
 DataReaderWriter.java,"['return', 'new', 'String', '(', 'ba', ',', 'DataReaderWriter', '.', 'UTF8', ')', ';']",0
 DataReaderWriter.java,"['public', 'static', 'Object', 'readDatum', '(', 'DataInput', 'in', ')', 'throws', 'IOException', ',', 'ExecException', '{']",0
 DataReaderWriter.java,"['/', '/', 'Read', 'the', 'data', 'type']",0
@@ -3445,7 +3445,6 @@ PigServer.java,"['Map', '<', 'OperatorKey', ',', 'LogicalOperator', '>', 'opTabl
 PigServer.java,"['if', '(', 'query', '!', '=', 'null', ')', '{']",0
 PigServer.java,"['query', '=', 'query', '.', 'trim', '(', ')', ';']",0
 PigServer.java,"['if', '(', 'query', '.', 'length', '(', ')', '=', '=', '0', ')', 'return', 'null', ';']",0
-PigServer.java,"['}', 'else', '{']",1
 PigServer.java,"['return', 'null', ';']",0
 PigServer.java,"['return', 'new', 'LogicalPlanBuilder', '(', 'pigContext', ')', '.', 'parse', '(', 'scope', ',', 'query', ',']",0
 PigServer.java,"['aliasesMap', ',', 'opTableMap', ',', 'aliasOpMap', ',', 'startLine', ')', ';']",0
@@ -3487,6 +3486,7 @@ PigServer.java,"['if', '(', 'alias', '=', '=', 'null', ')', '{']",0
 PigServer.java,"['/', '/', 'a', 'store', 'prompted', 'the', 'execution', '-', 'so', 'return']",0
 PigServer.java,"['/', '/', 'the', 'entire', 'logical', 'plan']",0
 PigServer.java,"['return', 'lp', ';']",0
+PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['}', 'else', '{']",0
 PigServer.java,"['/', '/', 'return', 'the', 'logical', 'plan', 'corresponding', 'to', 'the']",0
 PigServer.java,"['/', '/', 'alias', 'supplied']",0
@@ -4004,8 +4004,8 @@ GruntParser.java,"['while', '(', 'elems', '.', 'hasNext', '(', ')', ')', '{']",0
 GruntParser.java,"['ElementDescriptor', 'curElem', '=', 'elems', '.', 'next', '(', ')', ';']",0
 GruntParser.java,"['if', '(', 'mDfs', '.', 'isContainer', '(', 'curElem', '.', 'toString', '(', ')', ')', ')', '{']",0
 GruntParser.java,"['System', '.', 'out', '.', 'println', '(', 'curElem', '.', 'toString', '(', ')', '+', '""', '\\', 't', '<', 'dir', '>', '""', ')', ';']",0
-GruntParser.java,"['}', 'else', '{']",1
 GruntParser.java,"['printLengthAndReplication', '(', 'curElem', ')', ';']",0
+GruntParser.java,"['}', 'else', '{']",0
 GruntParser.java,"['}', 'else', '{']",0
 GruntParser.java,"['printLengthAndReplication', '(', 'pathDescriptor', ')', ';']",0
 GruntParser.java,"['catch', '(', 'DataStorageException', 'e', ')', '{']",0
@@ -4348,7 +4348,6 @@ Launcher.java,"['if', '(', 'job', '.', 'getState', '(', ')', '=', '=', 'Job', '.
 Launcher.java,"['/', '/', 'if', 'the', 'job', 'succeeded', ',', 'let', 'the', 'user', 'know', 'that']",0
 Launcher.java,"['/', '/', 'we', 'were', 'unable', 'to', 'get', 'statistics']",0
 Launcher.java,"['log', '.', 'warn', '(', '""', 'Unable', 'to', 'get', 'job', 'related', 'diagnostics', '""', ')', ';']",0
-Launcher.java,"['}', 'else', '{']",1
 Launcher.java,"['throw', 'e', ';']",1
 Launcher.java,"['protected', 'long', 'computeTimeSpent', '(', 'TaskReport', '[', ']', 'mapReports', ')', '{']",0
 Launcher.java,"['long', 'timeSpent', '=', '0', ';']",0
@@ -4384,6 +4383,7 @@ Launcher.java,"['int', 'errCode', '=', '2997', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Unable', 'to', 'recreate', 'exception', 'from', 'backed', 'error', ':', '""', '+', 'firstLine', ';']",0
 Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ',', 'e1', ')', ';']",0
 Launcher.java,"['}', 'else', '{']",0
+Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['log', '.', 'debug', '(', '""', 'Error', 'message', 'from', 'task', '(', '""', '+', 'type', '+', '""', ')', '""', '+']",0
 Launcher.java,"['reports', '[', 'i', ']', '.', 'getTaskID', '(', ')', '+', 'msgs', '[', 'j', ']', ')', ';']",0
 Launcher.java,"['/', '/', 'if', 'its', 'a', 'failed', 'job', 'then', 'check', 'if', 'there', 'is', 'more', 'than', 'one', 'exception']",0
@@ -4401,7 +4401,6 @@ Launcher.java,"['throw', 'exceptions', '.', 'get', '(', '0', ')', ';']",0
 Launcher.java,"['}', 'else', '{']",0
 Launcher.java,"['int', 'errCode', '=', '2115', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Internal', 'error', '.', 'Expected', 'to', 'throw', 'exception', 'from', 'the', 'backend', '.', 'Did', 'not', 'find', 'any', 'exception', 'to', 'throw', '.', '""', ';']",0
-Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",1
 Launcher.java,"['/', '*', '*']",0
 Launcher.java,"['protected', 'double', 'calculateProgress', '(', 'JobControl', 'jc', ',', 'JobClient', 'jobClient', ')', 'throws', 'IOException', '{']",0
 Launcher.java,"['double', 'prog', '=', '0', '.', '0', ';']",0
@@ -4539,6 +4538,7 @@ Launcher.java,"['return', '(', 'Throwable', ')', 'object', ';']",0
 Launcher.java,"['}', 'else', '{', '/', '/', 'else', 'for', 'if', '(', 'exceptionName', '!', '=', 'null', ')']",0
 Launcher.java,"['int', 'errCode', '=', '2055', ';']",0
 Launcher.java,"['String', 'msg', '=', '""', 'Did', 'not', 'find', 'exception', 'name', 'to', 'create', 'exception', 'from', 'string', ':', '""', '+', 'stackTraceLines', '.', 'toString', '(', ')', ';']",0
+Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['throw', 'new', 'ExecException', '(', 'msg', ',', 'errCode', ',', 'PigException', '.', 'BUG', ')', ';']",0
 Launcher.java,"['}', 'else', '{', '/', '/', 'else', 'for', 'if', '(', 'lines', '.', 'length', '>', '0', ')']",0
 Launcher.java,"['int', 'errCode', '=', '2056', ';']",0
