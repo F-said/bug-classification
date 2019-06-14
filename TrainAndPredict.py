@@ -17,7 +17,7 @@ y_data = data["Bug"]
 # Try various splits of data to see which gives highest test set F1 score
 train_splits = [0.75, 0.8, 0.85, 0.9]
 
-# Record f1 score for cnn and rnn models. Index corresponds to train splits 
+# Record f1 score for cnn and rnn models. Index corresponds to train splits
 cnn_f1 = []
 rnn_f1 = []
 
@@ -40,4 +40,11 @@ for split in train_splits:
     cnn_predict = 0
     rnn_predict = 0
 
+    # Calc f1_score
+    cnn_f1.append(f1_score(y_test, cnn_predict, average='binary'))
+    rnn_f1.append(f1_score(y_test, rnn_predict, average='binary'))
+
+# Get split with highest f1 score for both cnn and rnn
+print("Split with highest cnn f1 score:", train_splits[cnn_f1.index(max(cnn_f1))])
+print("Split with highest rnn f1 score:", train_splits[rnn_f1.index(max(rnn_f1))])
 
