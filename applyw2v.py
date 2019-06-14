@@ -40,7 +40,8 @@ def main():
 	w2v_model.build_vocab(sents,progress_per=1000)
 	w2v_model.train(sents, total_examples=w2v_model.corpus_count, epochs=30,report_delay=1)
 	w2v_model.init_sims(replace=True)
-	print_exploration(w2v_model)
+	w2v_model.save('w2v_model.bin')
+	#print_exploration(w2v_model)
 
 def print_exploration(w2v_model):	
 	print(w2v_model.wv.most_similar(positive=["int"]))
