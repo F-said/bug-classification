@@ -28,7 +28,6 @@ def main(debug=False):
 	worddim = len(w2v_model[buggy_lines[0][0]])
 	buggy_vecs = [pad([w2v_model[word] for word in line],maxtokens,np.array(worddim*[0.0])) for line in buggy_lines]
 	fine_vecs = [pad([w2v_model[word] for word in line],maxtokens,np.array(worddim*[0.0])) for line in fine_lines]
-	
 
 	if debug:
 		print(str(len(buggy_lines)) + " buggy lines")
@@ -36,6 +35,10 @@ def main(debug=False):
 		print(str(maxtokens) + " tokens per line")
 		print(str(worddim) + " dimension of token")
 		#print(buggy_vecs[42])
+
+	with open("vector_data.csv","w+") as my_csv:
+		csvWriter = csv.writer(my_csv,delimiter=',')
+		csvWriter.writerows(buggy_vecs)
 		
 if __name__ == '__main__':
 	main(True)
