@@ -12,7 +12,7 @@ Script to transform all statements into matrix of word vectors, with padding
 def pad(beglist, padl, pade):
 	return (beglist + padl * [pade])[:padl]
 
-def main(debug=False):
+def main(debug=False,printtocsv=False):
 	w2v_model = gensim.models.Word2Vec.load('w2v_model.bin')
 	with open('bug-classification.csv') as csv_file:
 		csv_reader = csv.reader(csv_file, delimiter=',')
@@ -36,13 +36,19 @@ def main(debug=False):
 		print(str(worddim) + " dimension of token")
 		#print(buggy_vecs[42])
 
-	with open("vector_data.csv","w+") as my_csv:
-		fieldnames = ('Statement', 'Buggy_Bit')
-		csvWriter = csv.writer(my_csv,delimiter=',')
-		for buggy_row in buggy_vecs:
-			csvWriter.writerow([buggy_row,1])
-		for clean_row in fine_vecs:
-			csvWriter.writerow([clean_row,0])
+	together = []
+	for buggy_row in buggy_vecs:
+		together.append([buggy_row,1])
+	for clean_row in fine_vecs:
+		together.append([clean_row,0])
+
+	if printtocsv:
+		with open("vector_data.csv","w+") as my_csv:
+			fieldnames = ('Statement', 'Buggy_Bit')
+			csvWriter = csv.writer(my_csv,delimiter=',')
+			csvWriter.writerows(together)
+
+	return together
 		
 if __name__ == '__main__':
-	main(True)
+	main(debug=True)
