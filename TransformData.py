@@ -37,8 +37,12 @@ def main(debug=False):
 		#print(buggy_vecs[42])
 
 	with open("vector_data.csv","w+") as my_csv:
+		fieldnames = ('Statement', 'Buggy_Bit')
 		csvWriter = csv.writer(my_csv,delimiter=',')
-		csvWriter.writerows(buggy_vecs)
+		for buggy_row in buggy_vecs:
+			csvWriter.writerow([buggy_row,1])
+		for clean_row in fine_vecs:
+			csvWriter.writerow([clean_row,0])
 		
 if __name__ == '__main__':
 	main(True)
