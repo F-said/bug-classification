@@ -38,17 +38,18 @@ def main(debug=False,printtocsv=False):
 
 	together = []
 	for buggy_row in buggy_vecs:
-		together.append([buggy_row,1])
+		together.append([buggy_row,0.99])
 	for clean_row in fine_vecs:
 		together.append([clean_row,0])
 
 	if printtocsv:
-		with open("vector_data.csv","w+") as my_csv:
+		with open("vector_data_transf.csv","w+") as my_csv:
 			fieldnames = ('Statement', 'Buggy_Bit')
 			csvWriter = csv.writer(my_csv,delimiter=',')
 			csvWriter.writerows(together)
 
 	return together
-		
+
+
 if __name__ == '__main__':
 	main(debug=True)
