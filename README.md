@@ -19,4 +19,10 @@ Framework
 7) Use some metrics to evaluate the whole model, such as precision, recall, F score, AUC, and so on.
 
 Results:
+
+
 <img width="301" alt="metrics" src="https://user-images.githubusercontent.com/26397102/60028546-80eb0b80-966d-11e9-8852-d99a27ca38d5.png">
+
+
+<img width="291" alt="accuracy" src="https://user-images.githubusercontent.com/26397102/60028613-a2e48e00-966d-11e9-8f3e-ca2537fb096e.png">
+
