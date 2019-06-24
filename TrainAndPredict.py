@@ -107,7 +107,10 @@ cnn_predict = cnn_predict.transpose()
 rnn_predict = rnn_predict.transpose()
 
 true_pos_cnn = sum([y_test == cnn_predict])
+true_pos_cnn = np.count_nonzero(true_pos_cnn == 1)
+
 true_pos_rnn = sum([y_test == rnn_predict])
+true_pos_rnn = np.count_nonzero(true_pos_rnn == 1)
 
 print(true_pos_cnn)
 print(true_pos_rnn)
