@@ -106,26 +106,51 @@ y_test[y_test > 0] = 1
 cnn_predict = cnn_predict.transpose()
 rnn_predict = rnn_predict.transpose()
 
+# Get true positives
 true_pos_cnn = sum([y_test == cnn_predict])
 true_pos_cnn = np.count_nonzero(true_pos_cnn == 1)
 
 true_pos_rnn = sum([y_test == rnn_predict])
 true_pos_rnn = np.count_nonzero(true_pos_rnn == 1)
 
-print(true_pos_cnn)
-print(true_pos_rnn)
-
-# Compute metrics
+# Compute accuraccy
 print("CNN Test Accuracy: ", true_pos_cnn/tot)
 print("RNN Test Accuracy: ", true_pos_rnn/tot, "\n")
 
-print("CNN Recall: ", recall_score(y_test, cnn_predict))
-print("RNN Recall: ", recall_score(y_test, rnn_predict), "\n")
+# Calc false negatives and false positives
+cnn_join = pd.DataFrame()
+cnn_join["truth"] = y_test.tolist()
+cnn_join["pred"] = cnn_predict.transpose().tolist()
+cnn_join["pred"] = cnn_join["pred"][1][0]
 
-print("CNN Precision: ", precision_score(y_test, cnn_predict))
-print("RNN Precision: ", precision_score(y_test, rnn_predict), "\n")
+rnn_join = pd.DataFrame()
+rnn_join["truth"] = y_test.tolist()
+rnn_join["pred"] = rnn_predict.transpose().tolist()
+rnn_join["pred"] = rnn_join["pred"][1][0]
 
-# Save predictions to reveal which lines of code were considered buggy
+false_neg_cnn = len(cnn_join[(cnn_join["truth"] == 1) & (cnn_join["pred"] == 0)])
+false_neg_rnn = len(rnn_join[(rnn_join["truth"] == 1) & (rnn_join["pred"] == 0)])
+
+false_pos_cnn = len(cnn_join[(cnn_join["truth"] == 0) & (cnn_join["pred"] == 1)])
+false_pos_rnn = len(rnn_join[(rnn_join["truth"] == 0) & (rnn_join["pred"] == 1)])
+
+# Calculate recall
+cnn_recall = true_pos_cnn/(true_pos_cnn + false_neg_cnn)
+rnn_recall = true_pos_rnn/(true_pos_rnn + false_neg_rnn)
+print("CNN Recall: ", cnn_recall)
+print("RNN Recall: ", rnn_recall, "\n")
+
+# Calculate precision
+cnn_precision = true_pos_cnn/(true_pos_cnn + false_pos_cnn)
+rnn_precision = true_pos_rnn/(true_pos_rnn + false_pos_rnn)
+print("CNN Precision: ", cnn_precision)
+print("RNN Precision: ", rnn_precision, "\n")
+
+# Calculate f1 score
+print("CNN f1 score: ", 2*((cnn_precision * cnn_recall)/(cnn_precision + cnn_recall)))
+print("RNN f1 score: ", 2*((rnn_precision * rnn_recall)/(rnn_precision + rnn_recall)), "\n")
+
+# Save predictions of both models to reveal which lines of code were considered buggy
 # Index CNN predictions by positive values
 cnn_result = np.where(cnn_predict == 1)
 cnn_positives = list(cnn_result)
