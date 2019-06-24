@@ -1,7 +1,7 @@
 from Simple_rnn_and_simple_cnn import simple_cnn, simple_rnn
 import pandas as pd
 import numpy as np
-from sklearn.metrics import f1_score
+from sklearn.metrics import recall_score, precision_score
 from keras.utils.vis_utils import plot_model
 import ast
 import TransformData
@@ -95,11 +95,32 @@ print('RNN Metrics:', rnn_model.metrics_names, rnn_score)
 
 # Create predictions to get accuracy
 # Get predictions from these two models and convert binary targets to int
+tot = len(y_test)
 cnn_predict = cnn_model.predict(x_test).astype(int)
 rnn_predict = rnn_model.predict(x_test).astype(int)
 
-print("CNN Test Accuracy",)
-print("RNN Test Accuracy",)
+# Convert all 0.99's to 1 in y_test for accuracy calculation
+y_test[y_test > 0] = 1
+
+# Get transpose of predictions to turn column vector into row vector
+cnn_predict = cnn_predict.transpose()
+rnn_predict = rnn_predict.transpose()
+
+true_pos_cnn = sum([y_test == cnn_predict])
+true_pos_rnn = sum([y_test == rnn_predict])
+
+print(true_pos_cnn)
+print(true_pos_rnn)
+
+# Compute metrics
+print("CNN Test Accuracy: ", true_pos_cnn/tot)
+print("RNN Test Accuracy: ", true_pos_rnn/tot, "\n")
+
+print("CNN Recall: ", recall_score(y_test, cnn_predict))
+print("RNN Recall: ", recall_score(y_test, rnn_predict), "\n")
+
+print("CNN Precision: ", precision_score(y_test, cnn_predict))
+print("RNN Precision: ", precision_score(y_test, rnn_predict), "\n")
 
 # Save predictions to reveal which lines of code were considered buggy
 # Index CNN predictions by positive values
