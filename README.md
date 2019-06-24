@@ -17,3 +17,6 @@ Framework
 6) Predict on the testing data and match the results with the known results to see the performance of the model.
 
 7) Use some metrics to evaluate the whole model, such as precision, recall, F score, AUC, and so on.
+
+Results:
+<img width="301" alt="metrics" src="https://user-images.githubusercontent.com/26397102/60028546-80eb0b80-966d-11e9-8852-d99a27ca38d5.png">
