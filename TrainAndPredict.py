@@ -1,13 +1,12 @@
 from Simple_rnn_and_simple_cnn import simple_cnn, simple_rnn
 import pandas as pd
 import numpy as np
-from sklearn.metrics import recall_score, precision_score
 from keras.utils.vis_utils import plot_model
 import ast
 import TransformData
 from keras.models import load_model
 from keras.utils import plot_model
-import tensorflow as tf
+from imblearn.over_sampling import RandomOverSampler
 
 """
 Script to train and predict on data using simple rnn and simple cnn
@@ -62,7 +61,30 @@ y_train = y_data[rand_sample]
 x_test = x_data[~rand_sample]
 y_test = y_data[~rand_sample]
 
-saved = True
+oversample = True
+# Over-sample to generate more positive data samples to train on
+if oversample:
+    # Set random state for consistency. Create equal number of buggy lines to non-buggy lines
+    ros = RandomOverSampler(ratio=0.75, random_state=42)
+
+    # Reshape for the random sampling
+    nsamples, nx, ny = x_train.shape
+    x_train_reshape = x_train.reshape((nsamples, nx * ny))
+
+    nsamples, nx, ny = x_test.shape
+    x_test_reshape = x_test.reshape((nsamples, nx * ny))
+
+    # Over sample
+    x_train, y_train = ros.fit_sample(x_train_reshape, y_train)
+    x_test, y_test = ros.fit_sample(x_test_reshape, y_test)
+
+    # Reshape to original shape
+    x_train = x_train.reshape([-1, input_len, input_dim])
+    x_test = x_test.reshape([-1, input_len, input_dim])
+
+    print("You've been oversampled")
+
+saved = False
 if saved:
     cnn_model = load_model("cnn_model.h5")
     rnn_model = load_model("rnn_model.h5")
@@ -78,12 +100,12 @@ else:
                   verbose=1, validation_data=(x_test, y_test))
 
     # Save the models
-    cnn_model.save("cnn_model.h5")
-    rnn_model.save("rnn_model.h5")
+    cnn_model.save("cnn_model_res.h5")
+    rnn_model.save("rnn_model_res.h5")
 
     # Illustrate models
-    plot_model(cnn_model, to_file='cnn_model_vis.png')
-    plot_model(rnn_model, to_file='rnn_model_vis.png')
+    # plot_model(cnn_model, to_file='cnn_model_vis.png')
+    # plot_model(rnn_model, to_file='rnn_model_vis.png')
 
 # Evaluate the models
 cnn_score = cnn_model.evaluate(x_test, y_test, verbose=0)
