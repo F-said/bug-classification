@@ -7,6 +7,7 @@ import TransformData
 from keras.models import load_model
 from keras.utils import plot_model
 from imblearn.over_sampling import RandomOverSampler
+import matplotlib.pyplot as plt
 
 """
 Script to train and predict on data using simple rnn and simple cnn
@@ -15,6 +16,7 @@ Script to train and predict on data using simple rnn and simple cnn
 # Function to catch any division by 0
 def div_catch(n, d):
     return n / d if d != 0 else "N/A"
+
 
 batch_size = 32
 epochs = 12
@@ -65,14 +67,10 @@ y_train = y_data[rand_sample]
 x_test = x_data[~rand_sample]
 y_test = y_data[~rand_sample]
 
-oversample = True
-# Over-sample to generate more positive data samples to train on
-# IF OVERSAMPLE IS TRUE, CHANGE
-# cnn_model = load_model("cnn_model.h5") TO cnn_model = load_model("cnn_model_res.h5")
-# AND SAME FOR RNN
+oversample = False
 if oversample:
     # Set random state for consistency. Create equal number of buggy lines to non-buggy lines
-    ros = RandomOverSampler(ratio='minority', random_state=42)
+    ros = RandomOverSampler(ratio="minority", random_state=42)
 
     # Reshape for the random sampling
     nsamples, nx, ny = x_train.shape
@@ -92,9 +90,12 @@ if oversample:
     print("You've been oversampled")
 
 saved = True
-if saved:
+if saved and oversample:
     cnn_model = load_model("cnn_model_res.h5")
     rnn_model = load_model("rnn_model_res.h5")
+elif saved and not oversample:
+    cnn_model = load_model("cnn_model.h5")
+    rnn_model = load_model("rnn_model.h5")
 else:
     # Create models from simple_rnn_and_simple_cnn file
     cnn_model = simple_cnn(input_len, input_dim, 1, 1, 1, 1, 1)
@@ -107,8 +108,12 @@ else:
                   verbose=1, validation_data=(x_test, y_test))
 
     # Save the models
-    cnn_model.save("cnn_model_res.h5")
-    rnn_model.save("rnn_model_res.h5")
+    if oversample:
+        cnn_model.save("cnn_model_res.h5")
+        rnn_model.save("rnn_model_res.h5")
+    else:
+        cnn_model.save("cnn_model.h5")
+        rnn_model.save("rnn_model.h5")
 
     # Illustrate models
     # plot_model(cnn_model, to_file='cnn_model_vis.png')
