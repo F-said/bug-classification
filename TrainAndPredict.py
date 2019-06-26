@@ -63,9 +63,12 @@ y_test = y_data[~rand_sample]
 
 oversample = True
 # Over-sample to generate more positive data samples to train on
+# IF OVERSAMPLE IS TRUE, CHANGE
+# cnn_model = load_model("cnn_model.h5") TO cnn_model = load_model("cnn_model_res.h5")
+# AND SAME FOR RNN
 if oversample:
     # Set random state for consistency. Create equal number of buggy lines to non-buggy lines
-    ros = RandomOverSampler(ratio=0.75, random_state=42)
+    ros = RandomOverSampler(ratio='minority', random_state=42)
 
     # Reshape for the random sampling
     nsamples, nx, ny = x_train.shape
@@ -84,10 +87,10 @@ if oversample:
 
     print("You've been oversampled")
 
-saved = False
+saved = True
 if saved:
-    cnn_model = load_model("cnn_model.h5")
-    rnn_model = load_model("rnn_model.h5")
+    cnn_model = load_model("cnn_model_res.h5")
+    rnn_model = load_model("rnn_model_res.h5")
 else:
     # Create models from simple_rnn_and_simple_cnn file
     cnn_model = simple_cnn(input_len, input_dim, 1, 1, 1, 1, 1)
