@@ -23,10 +23,4 @@ Original Results:
 
 <img width="301" alt="metrics" src="https://user-images.githubusercontent.com/26397102/60028546-80eb0b80-966d-11e9-8852-d99a27ca38d5.png">
 
-
-<img width="291" alt="accuracy" src="https://user-images.githubusercontent.com/26397102/60028613-a2e48e00-966d-11e9-8f3e-ca2537fb096e.png">
-
-<img width="251" alt="recall-precision" src="https://user-images.githubusercontent.com/26397102/60034844-7171bf80-9679-11e9-8959-87d9dea43fd5.png">
-
-
-<img width="253" alt="f1-score" src="https://user-images.githubusercontent.com/26397102/60034874-86e6e980-9679-11e9-8de9-6e6975841334.png">
+<img width="287" alt="reg_metrics" src="https://user-images.githubusercontent.com/26397102/60200406-0c9e9c80-9814-11e9-8260-e2d75aed4869.png">
