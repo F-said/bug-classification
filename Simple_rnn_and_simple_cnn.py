@@ -30,8 +30,10 @@ def simple_cnn(input_len, input_dim, output_dim, filter_num, kernel_size_num, st
     model.add(Dense(input_dim))
     model.add(Activation('relu'))
     model.add(Dense(output_dim))
-    model.add(Activation('softmax'))
-    model.compile(loss='sparse_categorical_crossentropy', optimizer='adadelta', metrics=['accuracy'])
+    # Formerly Activation('softmax')
+    model.add(Activation('sigmoid'))
+    # Formerly loss=sparse_categorical_crossentropy
+    model.compile(loss='binary_crossentropy', optimizer='adadelta', metrics=['accuracy'])
     return model
 
 
