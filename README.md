@@ -21,14 +21,10 @@ Framework
 Original Results:
 
 
-<img width="301" alt="metrics" src="https://user-images.githubusercontent.com/26397102/60028546-80eb0b80-966d-11e9-8852-d99a27ca38d5.png">
-
-<img width="287" alt="reg_metrics" src="https://user-images.githubusercontent.com/26397102/60200406-0c9e9c80-9814-11e9-8260-e2d75aed4869.png">
+<img width="496" alt="reg_metrics" src="https://user-images.githubusercontent.com/26397102/60216166-52209100-9837-11e9-9f65-d420184fca4a.png">
 
 
 Oversampled Resuts (Ratio 1:1):
 
 
-<img width="291" alt="overs_loss" src="https://user-images.githubusercontent.com/26397102/60201504-699b5200-9816-11e9-86da-666698d8e0c7.png">
-
-<img width="305" alt="overs_metrics" src="https://user-images.githubusercontent.com/26397102/60201545-7ddf4f00-9816-11e9-825f-7263c6e4b542.png">
+<img width="498" alt="oversample_mets" src="https://user-images.githubusercontent.com/26397102/60216154-4af98300-9837-11e9-8f9e-38e690555e4c.png">
