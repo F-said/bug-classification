@@ -1,0 +1,3028 @@
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/PigInputFormat.java
+if(pigContext.getExecType() == ExecType.MAPREDUCE)
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+else
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+} else {
+src/org/apache/pig/tools/pigstats/PigStats.java
+else {
+src/org/apache/pig/tools/pigstats/PigStats.java
+String lastJobID;
+src/org/apache/pig/tools/pigstats/PigStats.java
+if(temp.contains(job))
+src/org/apache/pig/tools/pigstats/PigStats.java
+continue;
+src/org/apache/pig/tools/pigstats/PigStats.java
+else
+src/org/apache/pig/tools/pigstats/PigStats.java
+if(reducePlan == null) {
+src/org/apache/pig/tools/pigstats/PigStats.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/JobControlCompiler.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/JobControlCompiler.java
+try {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReducePOStoreImpl.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReducePOStoreImpl.java
+try {
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+String storeFunc = conf.get("pig.storeFunc", "");
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+if (storeFunc.length() == 0) {
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+store = new PigStorage();
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+try {
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+} catch (Exception e) {
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+int errCode = 2081;
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+String msg = "Unable to setup the store function.";
+src/org/apache/pig/backend/hadoop/executionengine/util/MapRedUtil.java
+throw new ExecException(msg, errCode, PigException.BUG, e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/plans/DotMRPrinter.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/plans/DotPOPrinter.java
+plans.addAll(((POSplit)op).getPlans());
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/plans/DotPOPrinter.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/plans/PlanPrinter.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/plans/PlanPrinter.java
+sb.append(planString(((POSplit)node).getPlans()));
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/plans/PlanPrinter.java
+else if (node instanceof PODemux) {
+src/org/apache/pig/impl/logicalLayer/DotLOPrinter.java
+}
+src/org/apache/pig/impl/plan/DotPlanDumper.java
+}
+src/org/apache/pig/impl/plan/DotPlanDumper.java
+if (mSubgraphs.contains(l) || mMultiInputSubgraphs.contains(l)) {
+src/org/apache/pig/impl/plan/PlanDumper.java
+}
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(null != s) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+{
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+}
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(LogicalPlan.chainOfProjects(predecessorPlan)) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+LOProject rootProject = (LOProject)predecessorPlan.getRoots().get(0);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+inputColumn = rootProject.getCol();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return new ProjectionMap(mapFields, removedFields, addedFields);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(outputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(leaves.get(0) instanceof LOProject) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(inputSchema != null) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mapFields = null;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+super(plan,
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+MultiMap<Integer, Pair<Integer, Integer>> mapFields = new MultiMap<Integer, Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mapFields.put(0, new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+else
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+)
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+*
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+super(plan, k);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public Schema getSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<LogicalOperator> inputs = mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mType = DataType.BAG;//mType is from the super class
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for (LogicalOperator op : inputs) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+} catch (FrontendException ioe) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+throw ioe;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mIsSchemaComputed = true;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+mSchema = new Schema(fss);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return mSchema;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+LogicalOperator newOp) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public void unsetSchema() throws VisitorException{
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for(LogicalOperator input: getInputs()) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+SchemaRemover sr = new SchemaRemover(plan);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+sr.visit();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+super.unsetSchema();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public List<LogicalOperator> getInputs() {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public void visit(LOVisitor v) throws VisitorException {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+v.visit(this);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public String name() {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public boolean supportsMultipleInputs() {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if (inputs == null || inputs.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
++ "after it has an input only") ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+int errCode = 1010;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+String msg = "getAtomicGroupByType is used only when"
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null) ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+// merge all the inner plan outputs so we know what type
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for(int i=0;i < getInputs().size(); i++) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+LogicalOperator input = getInputs().get(i) ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<LogicalPlan> innerPlans
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if (innerPlans.size() != 1) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+int errCode = 1012;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
++ "the same number of inner plans";
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+byte innerType = innerPlans.get(0).getSingleLeafPlanOutputType() ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+int errCode = 1011;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+String msg = "getTupleGroupBySchema is used only when"
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<Schema.FieldSchema> fsList = new ArrayList<Schema.FieldSchema>() ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+// by default, they are all bytearray
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+// for type checking, we don't care about aliases
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for(int i=0; i<outputSchemaSize; i++) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+fsList.add(new Schema.FieldSchema(null, DataType.BYTEARRAY)) ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+boolean seenProjectStar = false;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for(int j=0;j < innerPlans.size(); j++) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+byte innerType = innerPlans.get(j).getSingleLeafPlanOutputType() ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+ExpressionOperator eOp = (ExpressionOperator)innerPlans.get(j).getSingleLeafPlanOutputOp();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(eOp instanceof LOProject) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(((LOProject)eOp).isStar()) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+seenProjectStar = true;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+Schema.FieldSchema fs = eOp.getFieldSchema();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(null != fs) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+int errCode = 1013;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return new Schema(fsList) ;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+Schema outputSchema;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+outputSchema = getSchema();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+} catch (FrontendException fee) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<LogicalOperator> predecessors = (ArrayList<LogicalOperator>)mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(predecessors == null) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<Integer> addedFields = new ArrayList<Integer>();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for(int inputNum = 0; inputNum < predecessors.size(); ++inputNum) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+LogicalOperator predecessor = predecessors.get(inputNum);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+inputSchema = predecessor.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+/*
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<LogicalOperator> predecessors = mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+List<RequiredFields> requiredFields = new ArrayList<RequiredFields>();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+Set<Pair<Integer, Integer>> fields = new HashSet<Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+Set<LOProject> projectSet = new HashSet<LOProject>();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+boolean groupByStar = false;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+TopLevelProjectFinder projectFinder = new TopLevelProjectFinder(plan);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+projectFinder.visit();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+} catch (VisitorException ve) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+requiredFields.clear();
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+requiredFields.add(null);
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return requiredFields;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+projectSet.addAll(projectFinder.getProjectSet());
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(projectFinder.getProjectStarSet() != null) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+groupByStar = true;
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(groupByStar) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+requiredFields.add(new RequiredFields(true));
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for (LOProject project : projectSet) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+for (int inputColumn : project.getProjection()) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+fields.add(new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+if(fields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+requiredFields.add(new RequiredFields(false, true));
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+requiredFields.add(new RequiredFields(new ArrayList<Pair<Integer, Integer>>(fields)));
+src/org/apache/pig/impl/logicalLayer/LOCogroup.java
+return (requiredFields.size() == 0? null: requiredFields);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+log.debug("Operator schema is null; Setting it to new schema");
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+log.debug("Reconciling schema");
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+log.debug("mSchema: " + mSchema + " schema: " + schema);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+{
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+}
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+if(outputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+if(inputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return new ProjectionMap(false);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return new ProjectionMap(mapFields, null, null);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return false;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+super(plan,
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+MultiMap<Integer, Pair<Integer, Integer>> mapFields = new MultiMap<Integer, Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+mapFields.put(i, new Pair<Integer, Integer>(0, i));
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+else
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+)
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+*
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public Schema getSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+} catch (FrontendException ioe) {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+throw ioe;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+mIsSchemaComputed = true;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return mSchema;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public void visit(LOVisitor v) throws VisitorException {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+v.visit(this);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public String name() {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public boolean supportsMultipleInputs() {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+Schema outputSchema;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+outputSchema = getSchema();
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+} catch (FrontendException fee) {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+List<LogicalOperator> predecessors = (ArrayList<LogicalOperator>)mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+Schema inputSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+/*
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+List<RequiredFields> requiredFields = new ArrayList<RequiredFields>();
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+return requiredFields;
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+requiredFields.add(new RequiredFields(false, true));
+src/org/apache/pig/impl/logicalLayer/LOLoad.java
+/* (non-Javadoc)
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+/**
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+*/
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* Get a list of fields that this operator requires. This is not necessarily
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* equivalent to the list of fields the operator projects. For example,
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* explicitly referenced in its filter expression.
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+{
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+}
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+else
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+)
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+);
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+*
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+try {
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+} catch (FrontendException ioe) {
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+/*
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LogicalOperator.java
+};
+src/org/apache/pig/impl/plan/ProjectionMap.java
+/**
+src/org/apache/pig/impl/plan/ProjectionMap.java
+*/
+src/org/apache/pig/impl/plan/ProjectionMap.java
+{
+src/org/apache/pig/impl/plan/ProjectionMap.java
+}
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* and values being the input fields. Fields are numbered from 0. So for a
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* foreach operator derived from 'B = foreach A generate $0, $2, $3,
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* udf($1)' would produce a mapping of 0->(0, 0), 2->(0, 1), 3->(0, 2)
+src/org/apache/pig/impl/plan/ProjectionMap.java
+private MultiMap<Integer, Pair<Integer, Integer>> mMappedFields;
+src/org/apache/pig/impl/plan/ProjectionMap.java
+public ProjectionMap(MultiMap<Integer, Pair<Integer, Integer>> mapFields,
+src/org/apache/pig/impl/plan/ProjectionMap.java
+private ProjectionMap(MultiMap<Integer, Pair<Integer, Integer>> mapFields,
+src/org/apache/pig/impl/plan/ProjectionMap.java
+public MultiMap<Integer, Pair<Integer, Integer>> getMappedFields() {
+src/org/apache/pig/impl/plan/ProjectionMap.java
+public void setMappedFields(MultiMap<Integer, Pair<Integer, Integer>> fields) {
+src/org/apache/pig/impl/plan/ProjectionMap.java
+)
+src/org/apache/pig/impl/plan/ProjectionMap.java
+);
+src/org/apache/pig/impl/plan/ProjectionMap.java
+@Override
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/plan/ProjectionMap.java
+*
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/plan/ProjectionMap.java
+* limitations under the License.
+src/org/apache/pig/impl/plan/ProjectionMap.java
+/*
+test/org/apache/pig/test/TestProjectionMap.java
+*/
+test/org/apache/pig/test/TestProjectionMap.java
+{
+test/org/apache/pig/test/TestProjectionMap.java
+}
+test/org/apache/pig/test/TestProjectionMap.java
+ProjectionMap loadbProjectionMap = loadb.getProjectionMap();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(loadbProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(loadProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachProjectionMap.getMappedFields() == null);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that added fields contain [0, 1]
+test/org/apache/pig/test/TestProjectionMap.java
+List<Integer> foreachAddedFields = foreachProjectionMap.getAddedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachAddedFields.size() == 2);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachAddedFields.get(0) == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachAddedFields.get(1) == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(loadaProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(filterProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(splitProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(splitbProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(splitcProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(sortProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(limitProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(distinctProjectionMap == null);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> foreachMapFields = foreachProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+mapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(0).second == 2);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> cogroupMapFields = cogroupProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> mapValues = (ArrayList<Pair<Integer, Integer>>)cogroupMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(1).first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(1).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> foreachMappedFields = foreachProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> mapValues = (ArrayList<Pair<Integer, Integer>>)foreachMappedFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+mapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(0).second == 6);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(1).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(1).second == 7);
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> cogroupMapValues = (ArrayList<Pair<Integer, Integer>>)cogroupMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(1).first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(1).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(i);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).second == 2);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(mapValues.get(1).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapValues.get(1).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(2);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(3);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(4);
+test/org/apache/pig/test/TestProjectionMap.java
+foreachMapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).second == 3);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapValues.get(0).second == 4);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> crossMapFields = crossProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> crossMapValues = (ArrayList<Pair<Integer, Integer>>)crossMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(crossMapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(crossMapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+crossMapValues = (ArrayList<Pair<Integer, Integer>>)crossMapFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(crossMapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+crossMapValues = (ArrayList<Pair<Integer, Integer>>)crossMapFields.get(2);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(crossMapValues.get(0).first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+crossMapValues = (ArrayList<Pair<Integer, Integer>>)crossMapFields.get(3);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> unionMapFields = unionProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> unionMapValues = (ArrayList<Pair<Integer, Integer>>)unionMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(1).first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(1).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+unionMapValues = (ArrayList<Pair<Integer, Integer>>)unionMapFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(unionMapValues.get(1).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+MultiMap<Integer, Pair<Integer, Integer>> frjoinMapFields = frjoinProjectionMap.getMappedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> frjoinMapValues = (ArrayList<Pair<Integer, Integer>>)frjoinMapFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(frjoinMapValues.get(0).first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(frjoinMapValues.get(0).second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+frjoinMapValues = (ArrayList<Pair<Integer, Integer>>)frjoinMapFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(frjoinMapValues.get(0).second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+frjoinMapValues = (ArrayList<Pair<Integer, Integer>>)frjoinMapFields.get(2);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(frjoinMapValues.get(0).first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+frjoinMapValues = (ArrayList<Pair<Integer, Integer>>)frjoinMapFields.get(3);
+test/org/apache/pig/test/TestProjectionMap.java
+mapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(2);
+test/org/apache/pig/test/TestProjectionMap.java
+mapValues = (ArrayList<Pair<Integer, Integer>>)foreachMapFields.get(3);
+test/org/apache/pig/test/TestProjectionMap.java
+else
+test/org/apache/pig/test/TestProjectionMap.java
+)
+test/org/apache/pig/test/TestProjectionMap.java
+);
+test/org/apache/pig/test/TestProjectionMap.java
+@Override
+test/org/apache/pig/test/TestProjectionMap.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestProjectionMap.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestProjectionMap.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestProjectionMap.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestProjectionMap.java
+*
+test/org/apache/pig/test/TestProjectionMap.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestProjectionMap.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestProjectionMap.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestProjectionMap.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestProjectionMap.java
+* limitations under the License.
+test/org/apache/pig/test/TestProjectionMap.java
+/*
+test/org/apache/pig/test/TestProjectionMap.java
+};
+test/org/apache/pig/test/TestProjectionMap.java
+frjoin.getProjectionMap();
+test/org/apache/pig/test/TestProjectionMap.java
+//check cross projection map
+test/org/apache/pig/test/TestProjectionMap.java
+LOFRJoin frjoin = (LOFRJoin)lp.getSuccessors(loada).get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+//check cogroup projection map
+test/org/apache/pig/test/TestProjectionMap.java
+LOCogroup cogroup = (LOCogroup)lp.getSuccessors(loada).get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+ProjectionMap cogroupProjectionMap = cogroup.getProjectionMap();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupProjectionMap.changes() == true);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupMapFields != null);
+test/org/apache/pig/test/TestProjectionMap.java
+//check the cogroup removed fields is null
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupProjectionMap.getRemovedFields() == null);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that cogroup added fields contain [1, 2]
+test/org/apache/pig/test/TestProjectionMap.java
+List<Integer> cogroupAddedFields = cogroupProjectionMap.getAddedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupAddedFields.size() == 2);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupAddedFields.get(0) == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupAddedFields.get(1) == 2);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that the foreach projection map has non-null mappedFields
+test/org/apache/pig/test/TestProjectionMap.java
+LOForEach foreach = (LOForEach)lp.getLeaves().get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+ProjectionMap foreachProjectionMap = foreach.getProjectionMap();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachProjectionMap.changes() == true);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapFields != null);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that removed fields has all the group column from the input cogroup
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> foreachRemovedFields = foreachProjectionMap.getRemovedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachRemovedFields.size() == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+Pair<Integer, Integer> removedField = foreachRemovedFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(removedField.first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(removedField.second == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that added fields is null
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachAddedFields == null);
+test/org/apache/pig/test/TestProjectionMap.java
+//check that removed fields is not null
+test/org/apache/pig/test/TestProjectionMap.java
+List<Pair<Integer, Integer>> cogroupRemovedFields = cogroupProjectionMap.getRemovedFields();
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupRemovedFields != null);
+test/org/apache/pig/test/TestProjectionMap.java
+Pair<Integer, Integer> removedFields = cogroupRemovedFields.get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(removedFields.first == 0);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(removedFields.second == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+removedFields = cogroupRemovedFields.get(1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(removedFields.first == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(cogroupRemovedFields.size() == 1);
+test/org/apache/pig/test/TestProjectionMap.java
+assertTrue(foreachMapFields.size() == 3);
+test/org/apache/pig/test/TestProjectionMap.java
+LOLoad loada = (LOLoad) lp.getRoots().get(0);
+test/org/apache/pig/test/TestProjectionMap.java
+LOLoad loadb = (LOLoad) lp.getRoots().get(1);
+test/org/apache/pig/test/TestRequiredFields.java
+*/
+test/org/apache/pig/test/TestRequiredFields.java
+{
+test/org/apache/pig/test/TestRequiredFields.java
+}
+test/org/apache/pig/test/TestRequiredFields.java
+else
+test/org/apache/pig/test/TestRequiredFields.java
+)
+test/org/apache/pig/test/TestRequiredFields.java
+);
+test/org/apache/pig/test/TestRequiredFields.java
+@Override
+test/org/apache/pig/test/TestRequiredFields.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestRequiredFields.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestRequiredFields.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestRequiredFields.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestRequiredFields.java
+*
+test/org/apache/pig/test/TestRequiredFields.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestRequiredFields.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestRequiredFields.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestRequiredFields.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestRequiredFields.java
+* limitations under the License.
+test/org/apache/pig/test/TestRequiredFields.java
+/*
+test/org/apache/pig/test/TestRequiredFields.java
+};
+test/org/apache/pig/test/TestRequiredFields.java
+LOFRJoin frjoin = (LOFRJoin)lp.getSuccessors(loada).get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+LOCogroup cogroup = (LOCogroup)lp.getSuccessors(loada).get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+LOForEach foreach = (LOForEach)lp.getLeaves().get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+LOLoad loada = (LOLoad) lp.getRoots().get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+LOLoad loadb = (LOLoad) lp.getRoots().get(1);
+test/org/apache/pig/test/TestRequiredFields.java
+//check cogroup required fields
+test/org/apache/pig/test/TestRequiredFields.java
+List<RequiredFields> cogroupRequiredFields = cogroup.getRequiredFields();
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(cogroupRequiredFields.size() == 2);
+test/org/apache/pig/test/TestRequiredFields.java
+requiredField = cogroupRequiredFields.get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+requiredField = cogroupRequiredFields.get(1);
+test/org/apache/pig/test/TestRequiredFields.java
+//check that the foreach required fields contain [<0, 1>, <0, 2>]
+test/org/apache/pig/test/TestRequiredFields.java
+List<RequiredFields> foreachRequiredFields = foreach.getRequiredFields();
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(foreachRequiredFields.size() == 1);
+test/org/apache/pig/test/TestRequiredFields.java
+requiredField = foreachRequiredFields.get(0);
+test/org/apache/pig/test/TestRequiredFields.java
+fields = requiredField.getFields();
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(fields.size() == 2);
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(fields.get(0).first == 0);
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(fields.get(0).second == 1);
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(fields.get(1).first == 0);
+test/org/apache/pig/test/TestRequiredFields.java
+assertTrue(fields.get(1).second == 2);
+test/org/apache/pig/test/TestRequiredFields.java
+List<Pair<Integer, Integer>> fields = requiredField.getFields();
+test/org/apache/pig/test/TestTypeChecking.java
+}
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+{
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+}
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return new ProjectionMap(mapFields, null, addedFields);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(outputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(inputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(addedFields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+addedFields = null;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+super(plan,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+MultiMap<Integer, Pair<Integer, Integer>> mapFields = new MultiMap<Integer, Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mapFields.put(outputColumnNum++, new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(nonDuplicates.containsKey(schema.alias))
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(nonDuplicates.get(schema.alias)!=-1) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+nonDuplicates.remove(schema.alias);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+nonDuplicates.put(schema.alias, -1);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+else
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+nonDuplicates.put(schema.alias, i);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+FieldSchema newFS = new FieldSchema(op.getAlias()+"::"+schema.alias,schema.schema,schema.type);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+)
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+*
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* This is the logical operator for the Fragment Replicate Join
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* It holds the user specified information and is responsible for
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* the schema computation. This mimics the LOCogroup operator except
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* the schema computation.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+private static Log log = LogFactory.getLog(LOFRJoin.class);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+private MultiMap<LogicalOperator, LogicalPlan> mJoinColPlans;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+private LogicalOperator fragOp;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public LOFRJoin(
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+MultiMap<LogicalOperator, LogicalPlan> joinColPlans,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+boolean[] isInner, LogicalOperator fragOp) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+super(plan, k);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mJoinColPlans = joinColPlans;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+this.fragOp = fragOp;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* Uses the schema from its input operators and dedups
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* those fields that have the same alias and sets the
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* schema for the join
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public Schema getSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<LogicalOperator> inputs = mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mType = DataType.BAG;//mType is from the super class
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Hashtable<String, Integer> nonDuplicates = new Hashtable<String, Integer>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(!mIsSchemaComputed){
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<Schema.FieldSchema> fss = new ArrayList<Schema.FieldSchema>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int i=-1;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (LogicalOperator op : inputs) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Schema cSchema = op.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(cSchema!=null){
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (FieldSchema schema : cSchema.getFields()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+++i;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+newFS = new FieldSchema(op.getAlias()+"::"+schema.alias,schema.schema,schema.type);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+newFS.setParent(schema.canonicalName, op);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fss.add(newFS);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fss.add(new FieldSchema(null,DataType.BYTEARRAY));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+} catch (FrontendException ioe) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+throw ioe;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mIsSchemaComputed = true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (Entry<String, Integer> ent : nonDuplicates.entrySet()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int ind = ent.getValue();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(ind==-1) continue;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+FieldSchema prevSch = fss.get(ind);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fss.set(ind, new FieldSchema(ent.getKey(),prevSch.schema,prevSch.type));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mSchema = new Schema(fss);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return mSchema;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public MultiMap<LogicalOperator, LogicalPlan> getJoinColPlans() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return mJoinColPlans;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public void switchJoinColPlanOp(LogicalOperator oldOp,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+LogicalOperator newOp) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Collection<LogicalPlan> innerPlans = mJoinColPlans.removeKey(oldOp) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mJoinColPlans.put(newOp, innerPlans);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(fragOp.getOperatorKey().equals(oldOp.getOperatorKey()))
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fragOp = newOp;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public void unsetSchema() throws VisitorException{
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(LogicalOperator input: getInputs()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Collection<LogicalPlan> grpPlans = mJoinColPlans.get(input);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(grpPlans!=null)
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(LogicalPlan plan : grpPlans) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+SchemaRemover sr = new SchemaRemover(plan);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+sr.visit();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+super.unsetSchema();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public List<LogicalOperator> getInputs() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public void visit(LOVisitor v) throws VisitorException {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+v.visit(this);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public String name() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return "FRJoin " + mKey.scope + "-" + mKey.id;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public boolean supportsMultipleInputs() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public LogicalOperator getFragOp() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return fragOp;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public void setFragOp(LogicalOperator fragOp) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public boolean isTupleJoinCol() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if (inputs == null || inputs.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+throw new AssertionError("join.isTuplejoinCol() can be called "
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
++ "after it has an input only") ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// NOTE: we depend on the number of inner plans to determine
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// if the join col is a tuple. This could be an issue when there
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// is only one inner plan with Project(*). For that case if the
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// corresponding input to the Project had a schema then the front end
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// would translate the single Project(*) (through ProjectStarTranslator)
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// to many individual Projects. So the number of inner plans would then
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// be > 1 BEFORE reaching here. For the Project(*) case when the corresponding
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// input for the Project has no schema, treating it as an atomic col join
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// does not cause any problems since no casts need to be inserted in that case
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// anyway.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return mJoinColPlans.get(inputs.get(0)).size() > 1 ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public byte getAtomicJoinColType() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if (isTupleJoinCol()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int errCode = 1010;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+String msg = "getAtomicGroupByType is used only when"
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
++ " dealing with atomic join col";
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+byte joinColType = DataType.BYTEARRAY ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// merge all the inner plan outputs so we know what type
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// our join column should be
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(int i=0;i < getInputs().size(); i++) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+LogicalOperator input = getInputs().get(i) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<LogicalPlan> innerPlans
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+= new ArrayList<LogicalPlan>(getJoinColPlans().get(input)) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if (innerPlans.size() != 1) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int errCode = 1012;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+String msg = "Each join input has to have "
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
++ "the same number of inner plans";
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+byte innerType = innerPlans.get(0).getSingleLeafPlanOutputType() ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+joinColType = DataType.mergeType(joinColType, innerType) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return joinColType ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public Schema getTupleJoinColSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if (!isTupleJoinCol()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int errCode = 1011;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+String msg = "getTupleGroupBySchema is used only when"
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
++ " dealing with tuple join col";
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// this fsList represents all the columns in join tuple
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<Schema.FieldSchema> fsList = new ArrayList<Schema.FieldSchema>() ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int outputSchemaSize = getJoinColPlans().get(getInputs().get(0)).size() ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// by default, they are all bytearray
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+// for type checking, we don't care about aliases
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(int i=0; i<outputSchemaSize; i++) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fsList.add(new Schema.FieldSchema(null, DataType.BYTEARRAY)) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+boolean seenProjectStar = false;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(int j=0;j < innerPlans.size(); j++) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+byte innerType = innerPlans.get(j).getSingleLeafPlanOutputType() ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+ExpressionOperator eOp = (ExpressionOperator)innerPlans.get(j).getSingleLeafPlanOutputOp();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(eOp instanceof LOProject) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(((LOProject)eOp).isStar()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+seenProjectStar = true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Schema.FieldSchema joinFs = fsList.get(j);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+joinFs.type = DataType.mergeType(joinFs.type, innerType) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Schema.FieldSchema fs = eOp.getFieldSchema();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(null != fs) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+joinFs.setParent(eOp.getFieldSchema().canonicalName, eOp);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+joinFs.setParent(null, eOp);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(seenProjectStar && innerPlans.size() > 1) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int errCode = 1013;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+String msg = "Join attributes can either be star (*) or a list of expressions, but not both.";
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return new Schema(fsList) ;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Schema outputSchema;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+outputSchema = getSchema();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+} catch (FrontendException fee) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<LogicalOperator> predecessors = (ArrayList<LogicalOperator>)mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(predecessors == null) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<Integer> addedFields = new ArrayList<Integer>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+boolean[] unknownSchema = new boolean[predecessors.size()];
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+boolean anyUnknownInputSchema = false;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+int outputColumnNum = 0;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(int inputNum = 0; inputNum < predecessors.size(); ++inputNum) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+LogicalOperator predecessor = predecessors.get(inputNum);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Schema inputSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+inputSchema = predecessor.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+unknownSchema[inputNum] = true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+outputColumnNum++;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+addedFields.add(inputNum);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+anyUnknownInputSchema = true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+unknownSchema[inputNum] = false;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for(int inputColumn = 0; inputColumn < inputSchema.size(); ++inputColumn) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+mapFields.put(outputColumnNum++,
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+//TODO
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+/*
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* For now, if there is any input that has an unknown schema
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* flag it and return a null ProjectionMap.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* In the future, when unknown schemas are handled
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* mark inputs that have unknown schemas as output columns
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+* that have been added.
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(anyUnknownInputSchema) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<LogicalOperator> predecessors = mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+List<RequiredFields> requiredFields = new ArrayList<RequiredFields>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Set<Pair<Integer, Integer>> fields = new HashSet<Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+Set<LOProject> projectSet = new HashSet<LOProject>();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+boolean groupByStar = false;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (LogicalPlan plan : this.getJoinColPlans().get(predecessors.get(inputNum))) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+TopLevelProjectFinder projectFinder = new TopLevelProjectFinder(plan);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+projectFinder.visit();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+} catch (VisitorException ve) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+requiredFields.clear();
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+requiredFields.add(null);
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return requiredFields;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+projectSet.addAll(projectFinder.getProjectSet());
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(projectFinder.getProjectStarSet() != null) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+groupByStar = true;
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(groupByStar) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+requiredFields.add(new RequiredFields(true));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (LOProject project : projectSet) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+for (int inputColumn : project.getProjection()) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+fields.add(new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+if(fields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+requiredFields.add(new RequiredFields(false, true));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+requiredFields.add(new RequiredFields(new ArrayList<Pair<Integer, Integer>>(fields)));
+src/org/apache/pig/impl/logicalLayer/LOFRJoin.java
+return (requiredFields.size() == 0? null: requiredFields);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(null != s) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+{
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+}
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+inputColumn = rootProject.getCol();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return new ProjectionMap(mapFields, removedFields, addedFields);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(outputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(inputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(leaves.get(0) instanceof LOProject) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(LogicalPlan.chainOfProjects(foreachPlan)) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+LOProject rootProject = (LOProject)foreachPlan.getRoots().get(0);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(inputSchema != null) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+//if input schema is null then there are no mappedFields and removedFields
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+//if the size of the map is zero then set it to null
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(mapFields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mapFields = null;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(addedFields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+addedFields = null;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return false;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+super(plan,
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+MultiMap<Integer, Pair<Integer, Integer>> mapFields = new MultiMap<Integer, Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mapFields.put(outputColumn++, new Pair<Integer, Integer>(0, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+List<Pair<Integer, Integer>> values = (ArrayList<Pair<Integer, Integer>>)mapFields.get(key);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+for(Pair<Integer, Integer> value: values) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mappedSet.add(value.second);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+else
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+//innerSchema is null; check for schema type
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(DataType.isSchemaType(leafFS.type)) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+//flattening a null schema results in a bytearray
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(mapped) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+//map each flattened column to the original column
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mapFields.put(outputColumn++,
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+)
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+addedFields.add(outputColumn++);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+*
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+super(plan, k);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public Schema getSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mIsSchemaComputed = true;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+mSchema = new Schema(fss);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return mSchema;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public void unsetSchema() throws VisitorException{
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+SchemaRemover sr = new SchemaRemover(plan);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+sr.visit();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+super.unsetSchema();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public void visit(LOVisitor v) throws VisitorException {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+v.visit(this);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public String name() {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public boolean supportsMultipleInputs() {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+Schema outputSchema;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+outputSchema = getSchema();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+} catch (FrontendException fee) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+List<LogicalOperator> predecessors = (ArrayList<LogicalOperator>)mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(predecessors == null) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+List<Integer> addedFields = new ArrayList<Integer>();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+inputSchema = predecessor.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+/*
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+List<RequiredFields> requiredFields = new ArrayList<RequiredFields>();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+Set<Pair<Integer, Integer>> fields = new HashSet<Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+Set<LOProject> projectSet = new HashSet<LOProject>();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+projectFinder.visit();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+} catch (VisitorException ve) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+requiredFields.clear();
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+requiredFields.add(null);
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return requiredFields;
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+projectSet.addAll(projectFinder.getProjectSet());
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(projectFinder.getProjectStarSet() != null) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+requiredFields.add(new RequiredFields(true));
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+for (LOProject project : projectSet) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+for (int inputColumn : project.getProjection()) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+if(fields.size() == 0) {
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+requiredFields.add(new RequiredFields(false, true));
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+requiredFields.add(new RequiredFields(new ArrayList<Pair<Integer, Integer>>(fields)));
+src/org/apache/pig/impl/logicalLayer/LOForEach.java
+return (requiredFields.size() == 0? null: requiredFields);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+mSchema = op.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+{
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return null;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+}
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+if(outputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+if(inputSchema == null) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return new ProjectionMap(mapFields, null, null);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+LogicalPlan plan,
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+super(plan,
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+MultiMap<Integer, Pair<Integer, Integer>> mapFields = new MultiMap<Integer, Pair<Integer, Integer>>();
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+mapFields.put(inputColumn, new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+//removedFields.add(new Pair<Integer, Integer>(inputNum, inputColumn));
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+else
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+)
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+@Override
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* distributed with this work for additional information
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+*
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+* limitations under the License.
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+private static final long serialVersionUID = 2L;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+super(plan, k);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public Schema getSchema() throws FrontendException {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+mIsSchemaComputed = false;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+mSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+mIsSchemaComputed = true;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return mSchema;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public List<LogicalOperator> getInputs() {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public void visit(LOVisitor v) throws VisitorException {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+v.visit(this);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public String name() {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public boolean supportsMultipleInputs() {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+throw new FrontendException(msg, errCode, PigException.INPUT, false, null);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public ProjectionMap getProjectionMap() {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+Schema outputSchema;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+outputSchema = getSchema();
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+} catch (FrontendException fee) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+List<LogicalOperator> predecessors = (ArrayList<LogicalOperator>)mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+if(predecessors == null) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+for(int inputNum = 0; inputNum < predecessors.size(); ++inputNum) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+LogicalOperator predecessor = predecessors.get(inputNum);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+Schema inputSchema = null;
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+inputSchema = predecessor.getSchema();
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+for(int inputColumn = 0; inputColumn < inputSchema.size(); ++inputColumn) {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+/*
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+public List<RequiredFields> getRequiredFields() {
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+List<LogicalOperator> predecessors = mPlan.getPredecessors(this);
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+List<RequiredFields> requiredFields = new ArrayList<RequiredFields>();
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+requiredFields.add(new RequiredFields(true));
+src/org/apache/pig/impl/logicalLayer/LOUnion.java
+return (requiredFields.size() == 0? null: requiredFields);
+test/org/apache/pig/test/TestCounters.java
+}
+test/org/apache/pig/test/TestCounters.java
+pigServer.registerQuery("a = load '" + file + "';");
+test/org/apache/pig/test/TestLoad.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/relationalOperators/PODistinct.java
+continue;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/relationalOperators/POSort.java
+continue;
+src/org/apache/pig/data/DataByteArray.java
+mData = s.getBytes();
+src/org/apache/pig/PigServer.java
+*/
+src/org/apache/pig/PigServer.java
+try {
+src/org/apache/pig/PigServer.java
+} catch (FrontendException fe) {
+src/org/apache/pig/PigServer.java
+int errCode = 1002;
+src/org/apache/pig/PigServer.java
+String msg = "Unable to store alias " + id;
+src/org/apache/pig/PigServer.java
+}
+src/org/apache/pig/PigServer.java
+public ExecJob store(
+src/org/apache/pig/PigServer.java
+String id,
+src/org/apache/pig/PigServer.java
+String filename,
+src/org/apache/pig/PigServer.java
+String func) throws IOException {
+test/org/apache/pig/test/TestGrunt.java
+*/
+test/org/apache/pig/test/TestGrunt.java
+try {
+test/org/apache/pig/test/TestGrunt.java
+}
+src/org/apache/pig/data/DefaultAbstractBag.java
+this instanceof DistinctDataBag) {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/expressionOperators/POProject.java
+ArrayList<Integer> columns;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/expressionOperators/POProject.java
+res.returnStatus = POStatus.STATUS_OK;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/expressionOperators/POProject.java
+return res;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/expressionOperators/POProject.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/relationalOperators/POForEach.java
+res.returnStatus = POStatus.STATUS_OK;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/relationalOperators/POForEach.java
+return res;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/relationalOperators/POForEach.java
+}
+src/org/apache/pig/data/NonSpillableDataBag.java
+}
+test/org/apache/pig/test/TestUnion.java
+return res;
+test/org/apache/pig/test/TestUnion.java
+}
+test/org/apache/pig/test/Util.java
+}
+src/org/apache/pig/impl/plan/OperatorPlan.java
+}
+src/org/apache/pig/impl/plan/OperatorPlan.java
+} else {
+src/org/apache/pig/impl/plan/OperatorPlan.java
+return;
+src/org/apache/pig/impl/plan/OperatorPlan.java
+{
+src/org/apache/pig/impl/plan/OperatorPlan.java
+return true;
+src/org/apache/pig/impl/plan/OperatorPlan.java
+return false;
+src/org/apache/pig/impl/plan/OperatorPlan.java
+ArrayList al = new ArrayList(c);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+if(to.equals(dst)) {
+src/org/apache/pig/impl/plan/OperatorPlan.java
+multiMap.removeKey(src);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+/**
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* Remove a node in a way that connects the node's predecessor (if any)
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* case where the node has *one* predecessor and one or more successors.
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* It replaces the predecessor in same position as node was in
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* each of the successors predecessor list(getPredecessors()), to
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* preserve input ordering
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* for eg, it is used to remove redundant project(*) from plan
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* which will have only one predecessor,but can have multiple success
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* @param node Node to be removed
+src/org/apache/pig/impl/plan/OperatorPlan.java
+* @throws PlanException if the node has more than one predecessor
+src/org/apache/pig/impl/plan/OperatorPlan.java
+*/
+src/org/apache/pig/impl/plan/OperatorPlan.java
+public void removeAndReconnectMultiSucc(E node) throws PlanException {
+src/org/apache/pig/impl/plan/OperatorPlan.java
+E nodeB = node;
+src/org/apache/pig/impl/plan/OperatorPlan.java
+if (nodeC == null || nodeC.size() == 0) {
+src/org/apache/pig/impl/plan/OperatorPlan.java
+PlanException pe = new PlanException("Attempt to remove " +
+src/org/apache/pig/impl/plan/OperatorPlan.java
+" and reconnect for node with no successors.");
+src/org/apache/pig/impl/plan/OperatorPlan.java
+log.error(pe.getMessage());
+src/org/apache/pig/impl/plan/OperatorPlan.java
+throw pe;
+src/org/apache/pig/impl/plan/OperatorPlan.java
+for(E c: nodeC) {
+src/org/apache/pig/impl/plan/OperatorPlan.java
+Collection<E> sPreds = mToEdges.get(c);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+ArrayList<E> newPreds = new ArrayList<E>(sPreds.size());
+src/org/apache/pig/impl/plan/OperatorPlan.java
+for(E p: sPreds){
+src/org/apache/pig/impl/plan/OperatorPlan.java
+if(p == nodeB){
+src/org/apache/pig/impl/plan/OperatorPlan.java
+//replace
+src/org/apache/pig/impl/plan/OperatorPlan.java
+newPreds.add(nodeA);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+else{
+src/org/apache/pig/impl/plan/OperatorPlan.java
+newPreds.add(p);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+mToEdges.removeKey(c);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+mToEdges.put(c,newPreds);
+src/org/apache/pig/impl/plan/OperatorPlan.java
+remove(nodeB);
+test/org/apache/pig/test/TestBestFitCast.java
+}
+test/org/apache/pig/test/TestBestFitCast.java
+try {
+test/org/apache/pig/test/TestBestFitCast.java
+{
+test/org/apache/pig/test/TestBestFitCast.java
+/**
+test/org/apache/pig/test/TestBestFitCast.java
+*/
+test/org/apache/pig/test/TestOperatorPlan.java
+}
+test/org/apache/pig/test/TestOperatorPlan.java
+try {
+test/org/apache/pig/test/TestOperatorPlan.java
+} catch (PlanException pe) {
+test/org/apache/pig/test/TestOperatorPlan.java
+catch (PlanException pe) {
+test/org/apache/pig/test/TestOperatorPlan.java
+{
+test/org/apache/pig/test/TestOperatorPlan.java
+return true;
+test/org/apache/pig/test/TestOperatorPlan.java
+class AlwaysTransform extends Transformer<TOperator, TPlan> {
+test/org/apache/pig/test/TestOperatorPlan.java
+public boolean mTransformed = false;
+test/org/apache/pig/test/TestOperatorPlan.java
+AlwaysTransform(TPlan plan) {
+test/org/apache/pig/test/TestOperatorPlan.java
+super(plan, new DepthFirstWalker<TOperator, TPlan>(plan));
+test/org/apache/pig/test/TestOperatorPlan.java
+public boolean check(List<TOperator> nodes) {
+test/org/apache/pig/test/TestOperatorPlan.java
+public void transform(List<TOperator> nodes) {
+test/org/apache/pig/test/TestOperatorPlan.java
+mTransformed = true;
+test/org/apache/pig/test/TestOperatorPlan.java
+// Test that we match when a node is optional and the optional node is
+test/org/apache/pig/test/TestOperatorPlan.java
+assertTrue(transformer.mTransformed);
+test/org/apache/pig/test/TestOperatorPlan.java
+class NeverTransform extends Transformer<TOperator, TPlan> {
+test/org/apache/pig/test/TestOperatorPlan.java
+NeverTransform(TPlan plan) {
+test/org/apache/pig/test/TestOperatorPlan.java
+return false;
+test/org/apache/pig/test/TestOperatorPlan.java
+/**
+test/org/apache/pig/test/TestOperatorPlan.java
+*/
+src/org/apache/pig/Main.java
+}
+src/org/apache/pig/Main.java
+* @param args
+src/org/apache/pig/Main.java
+} else {
+src/org/apache/pig/Main.java
+try {
+src/org/apache/pig/Main.java
+//TODO
+src/org/apache/pig/Main.java
+opts.registerOpt('o', "hod", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+src/org/apache/pig/Main.java
+opts.registerOpt('j', "jar", CmdLineParser.ValueExpected.REQUIRED);
+src/org/apache/pig/Main.java
+opts.registerOpt('v', "verbose", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+src/org/apache/pig/Main.java
+opts.registerOpt('x', "exectype", CmdLineParser.ValueExpected.REQUIRED);
+src/org/apache/pig/Main.java
+opts.registerOpt('p', "param", CmdLineParser.ValueExpected.OPTIONAL);
+src/org/apache/pig/Main.java
+opts.registerOpt('l', "logfile", CmdLineParser.ValueExpected.REQUIRED);
+src/org/apache/pig/Main.java
+case 'i':
+src/org/apache/pig/Main.java
+System.out.println(getVersionString());
+src/org/apache/pig/Main.java
+return;
+src/org/apache/pig/Main.java
+{
+src/org/apache/pig/Main.java
+/**
+src/org/apache/pig/Main.java
+*/
+src/org/apache/pig/PigServer.java
+} else {
+src/org/apache/pig/PigServer.java
+return;
+src/org/apache/pig/PigServer.java
+{
+src/org/apache/pig/PigServer.java
+return true;
+src/org/apache/pig/PigServer.java
+/**
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+}
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+return;
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+{
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+super(plan);
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+/**
+src/org/apache/pig/impl/logicalLayer/optimizer/LogicalOptimizer.java
+*/
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+}
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+} else {
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+try {
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+public boolean check(List<LogicalOperator> nodes) throws OptimizerException {
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+{
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+return false;
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+/**
+src/org/apache/pig/impl/logicalLayer/optimizer/TypeCastInserter.java
+*/
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+}
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+} else {
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+RuleMatcher matcher = new RuleMatcher();
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+for (Rule rule : mRules) {
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+if (matcher.match(rule)) {
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+// approves as well.
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+List<List<O>> matches = matcher.getAllMatches();
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+for (List<O> match:matches)
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+{
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+// The transformer approves.
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+/**
+src/org/apache/pig/impl/plan/optimizer/PlanOptimizer.java
+*/
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+}
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+{
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+* A rule for optimizing a plan. The rule contains a pattern that must be
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+* matched in the plan before the optimizer can consider applying the rule
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+/**
+src/org/apache/pig/impl/plan/optimizer/Rule.java
+*/
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+}
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+} else {
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+try {
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+} catch (VisitorException ve) {
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+return;
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+{
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+Set<O> seen = new HashSet<O>();
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+mMatches.add(mMatch);
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+// Follow the edge to see the next node we should be looking for.
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+// This was looking for a single node
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+return true;
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+// We can arrive here either because we didn't match at this node or
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+// from the match vector and return false.
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+mMatch.set(nodeNumber, null);
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+return false;
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+/**
+src/org/apache/pig/impl/plan/optimizer/RuleMatcher.java
+*/
+src/org/apache/pig/pen/util/FunctionalLogicalOptimizer.java
+}
+src/org/apache/pig/pen/util/FunctionalLogicalOptimizer.java
+{
+src/org/apache/pig/pen/util/FunctionalLogicalOptimizer.java
+super(plan);
+src/org/apache/pig/pen/util/FunctionalLogicalOptimizer.java
+*/
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MRCompiler.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MRCompiler.java
+break;
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MRCompiler.java
+else
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MRCompiler.java
+else{
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MRCompiler.java
+continue;
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/partitioners/WeightedRangePartitioner.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/partitioners/WeightedRangePartitioner.java
+else
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+long numSamples = samples.size();
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+long toSkip = numSamples / numQuantiles;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+if(toSkip == 0) {
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// numSamples is < numQuantiles;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// set numQuantiles to numSamples
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+numQuantiles = (int)numSamples;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+toSkip = 1;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+}
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+long ind=0, j=-1, nextQuantile = toSkip-1;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+for (Tuple it : samples) {
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+if (ind==nextQuantile){
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+++j;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+nextQuantile+=toSkip;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+if(j==numQuantiles-1)
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+break;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+ind++;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+long i=-1;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+for (Tuple it : samples){
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+++i;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+int partInd = new Long(i/toSkip).intValue(); // which partition
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+if(partInd==numQuantiles) break;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// the quantiles array has the element from the sample which is the
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// is 5 and number of samples is 100, then toSkip = 20
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// quantiles[0] = sample[19] // the 20th element
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// quantiles[1] = sample[39] // the 40th element
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// and so on. For any element in the sample between 0 and 19, partInd
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// will be 0. We want to check if a sample element which is
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// This would mean that element might spread over the 0th and 1st
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// partition. We are looking for contributions to a partition
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// from such elements.
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// First We only check for sample elements in partitions other than the last one
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+CountingMap<Integer> cm = new CountingMap<Integer>();
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+cm.put(partInd, 1);
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+else
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+else{
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// we are either in the last partition (last quantile)
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// OR the sample element we are currently processing is not
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// the same as the element in the quantile array for this partition
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// if we haven't seen this sample item earlier, this is not an
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// element which crosses partitions - so ignore
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+continue;
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// we have seen this sample before (in a previous partInd),
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// add to the contribution associated with this sample - if we had
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// had this in the contribs map! (because of the if above).This
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// this map will have the contributions of the sample item to the different partitions
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+CountingMap<Integer> value = ent.getValue();
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+long total = value.getTotalCount();
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// for each partition that this sample item is present in,
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// compute the fraction of the total occurences for that
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// partition - this will be the probability with which we
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// will pick this partition in the final sort reduce job
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+// for this sample item
+src/org/apache/pig/impl/builtin/FindQuantiles.java
+for (Entry<Integer,Integer> valEnt : value.entrySet()) {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+physOp.setOperandType(op.getOperand().getType());
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+currentPlan.add(physOp);
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+LogToPhyMap.put(op, physOp);
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+try {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+} catch (PlanException pe) {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+catch (PlanException pe) {
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+return;
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+{
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+/**
+src/org/apache/pig/backend/hadoop/executionengine/physicalLayer/LogToPhyTranslationVisitor.java
+*/
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+public BinaryExpressionOperator(LogicalPlan plan, OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+}
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+{
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+return true;
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+/**
+src/org/apache/pig/impl/logicalLayer/BinaryExpressionOperator.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOAdd.java
+}
+src/org/apache/pig/impl/logicalLayer/LOAdd.java
+{
+src/org/apache/pig/impl/logicalLayer/LOAdd.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOAdd.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOAnd.java
+}
+src/org/apache/pig/impl/logicalLayer/LOAnd.java
+{
+src/org/apache/pig/impl/logicalLayer/LOAnd.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOAnd.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+}
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+{
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOBinCond.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+}
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+public LOCast(LogicalPlan plan, OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+{
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+return false;
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOCast.java
+*/
+src/org/apache/pig/impl/logicalLayer/LODivide.java
+}
+src/org/apache/pig/impl/logicalLayer/LODivide.java
+{
+src/org/apache/pig/impl/logicalLayer/LODivide.java
+/**
+src/org/apache/pig/impl/logicalLayer/LODivide.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOEqual.java
+}
+src/org/apache/pig/impl/logicalLayer/LOEqual.java
+{
+src/org/apache/pig/impl/logicalLayer/LOEqual.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOEqual.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOGreaterThan.java
+}
+src/org/apache/pig/impl/logicalLayer/LOGreaterThan.java
+{
+src/org/apache/pig/impl/logicalLayer/LOGreaterThan.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOGreaterThan.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOGreaterThanEqual.java
+}
+src/org/apache/pig/impl/logicalLayer/LOGreaterThanEqual.java
+{
+src/org/apache/pig/impl/logicalLayer/LOGreaterThanEqual.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOGreaterThanEqual.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOIsNull.java
+}
+src/org/apache/pig/impl/logicalLayer/LOIsNull.java
+{
+src/org/apache/pig/impl/logicalLayer/LOIsNull.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOIsNull.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOLesserThan.java
+}
+src/org/apache/pig/impl/logicalLayer/LOLesserThan.java
+{
+src/org/apache/pig/impl/logicalLayer/LOLesserThan.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOLesserThan.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOLesserThanEqual.java
+}
+src/org/apache/pig/impl/logicalLayer/LOLesserThanEqual.java
+{
+src/org/apache/pig/impl/logicalLayer/LOLesserThanEqual.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOLesserThanEqual.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+}
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+* @param map
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+{
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+return false;
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOMapLookup.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOMod.java
+}
+src/org/apache/pig/impl/logicalLayer/LOMod.java
+{
+src/org/apache/pig/impl/logicalLayer/LOMod.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOMod.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOMultiply.java
+}
+src/org/apache/pig/impl/logicalLayer/LOMultiply.java
+{
+src/org/apache/pig/impl/logicalLayer/LOMultiply.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOMultiply.java
+*/
+src/org/apache/pig/impl/logicalLayer/LONegative.java
+}
+src/org/apache/pig/impl/logicalLayer/LONegative.java
+{
+src/org/apache/pig/impl/logicalLayer/LONegative.java
+/**
+src/org/apache/pig/impl/logicalLayer/LONegative.java
+*/
+src/org/apache/pig/impl/logicalLayer/LONot.java
+}
+src/org/apache/pig/impl/logicalLayer/LONot.java
+{
+src/org/apache/pig/impl/logicalLayer/LONot.java
+/**
+src/org/apache/pig/impl/logicalLayer/LONot.java
+*/
+src/org/apache/pig/impl/logicalLayer/LONotEqual.java
+}
+src/org/apache/pig/impl/logicalLayer/LONotEqual.java
+{
+src/org/apache/pig/impl/logicalLayer/LONotEqual.java
+/**
+src/org/apache/pig/impl/logicalLayer/LONotEqual.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOOr.java
+}
+src/org/apache/pig/impl/logicalLayer/LOOr.java
+{
+src/org/apache/pig/impl/logicalLayer/LOOr.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOOr.java
+*/
+src/org/apache/pig/impl/logicalLayer/LORegexp.java
+}
+src/org/apache/pig/impl/logicalLayer/LORegexp.java
+{
+src/org/apache/pig/impl/logicalLayer/LORegexp.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LORegexp.java
+/**
+src/org/apache/pig/impl/logicalLayer/LORegexp.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOSubtract.java
+}
+src/org/apache/pig/impl/logicalLayer/LOSubtract.java
+{
+src/org/apache/pig/impl/logicalLayer/LOSubtract.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOSubtract.java
+*/
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+}
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+try {
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+{
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+return true;
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+/**
+src/org/apache/pig/impl/logicalLayer/LOUserFunc.java
+*/
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+}
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+} else {
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+try {
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+//TODO
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+{
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+/**
+src/org/apache/pig/impl/logicalLayer/LogicalPlanCloneHelper.java
+*/
+src/org/apache/pig/impl/logicalLayer/RemoveRedundantOperators.java
+}
+src/org/apache/pig/impl/logicalLayer/RemoveRedundantOperators.java
+project,
+src/org/apache/pig/impl/logicalLayer/RemoveRedundantOperators.java
+{
+src/org/apache/pig/impl/logicalLayer/RemoveRedundantOperators.java
+/**
+src/org/apache/pig/impl/logicalLayer/RemoveRedundantOperators.java
+*/
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+}
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+public UnaryExpressionOperator(LogicalPlan plan, OperatorKey k,
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+{
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+return false;
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+/**
+src/org/apache/pig/impl/logicalLayer/UnaryExpressionOperator.java
+*/
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+}
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+} else {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+try {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+} catch (PlanException pe) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+currentPlan.add(cast) ;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+catch (PlanException pe) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+int errCode = 2059;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+throw new TypeCheckerException(msg, errCode, PigException.BUG, pe);
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+this.visit(cast);
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+toType) ;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+throw new TypeCheckerException(msg, errCode, PigException.INPUT) ;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+} catch (VisitorException ve) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+throw ve;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+if (binCond.getLhsOp() instanceof LOConst
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+&& ((LOConst) binCond.getLhsOp()).getValue() == null) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+} catch (FrontendException e) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+int errCode = 1043;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+throw new TypeCheckerException(msg, errCode, PigException.INPUT, e);
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+if (binCond.getRhsOp() instanceof LOConst
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+&& ((LOConst) binCond.getRhsOp()).getValue() == null) {
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+project,
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+{
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+return true;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+return false;
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+/**
+src/org/apache/pig/impl/logicalLayer/validators/TypeCheckingVisitor.java
+*/
+test/org/apache/pig/test/TestEvalPipeline2.java
+}
+test/org/apache/pig/test/TestEvalPipeline2.java
+{
+test/org/apache/pig/test/TestEvalPipeline2.java
+*/
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+}
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+try {
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+toType) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+LONegative neg1 = new LONegative(plan, genNewOperatorKey(), constant1) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+LOSubtract subtract1 = new LOSubtract(plan,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+genNewOperatorKey(),
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+neg1,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+constant2) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project1,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project2) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project21,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+const21) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project111,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+const111) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project211,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project212) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project121,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+const121) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project11,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+const11) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+LOProject project21 = new LOProject(innerPlan1, genNewOperatorKey(), load1, 0) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+LOProject project22 = new LOProject(innerPlan1, genNewOperatorKey(), load1, 1) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+LOAdd add21 = new LOAdd(innerPlan1,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+project22) ;
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+add1,
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+{
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+/**
+test/org/apache/pig/test/TestTypeCheckingValidator.java
+*/
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+}
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+try {
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+genNewOperatorKey(),
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project1,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project2) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project21,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+const21) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project111,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+const111) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project211,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project212) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project121,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+const121) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project11,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+const11) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+project22) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+add1,
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+const1) ;
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+{
+test/org/apache/pig/test/TestTypeCheckingValidatorNoSchema.java
+*/
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+// We need to load the properties from the hadoop configuration
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Iterator<Map.Entry<String, String>> iter = jobConf.iterator();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (iter.hasNext()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Map.Entry<String, String> entry = iter.next();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+Enumeration<Object> propertiesIter = properties.keys();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (propertiesIter.hasMoreElements()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String key = (String) propertiesIter.nextElement();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String val = properties.getProperty(key);
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+//clear user defined properties and re-populate
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+properties.clear();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+while (hodPropertiesIter.hasMoreElements()) {
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+String key = (String) hodPropertiesIter.nextElement();
+src/org/apache/pig/backend/hadoop/executionengine/HExecutionEngine.java
+properties.put(key, val);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+throw e;
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+Exception e = getExceptionFromString(msgs[j]);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+exceptions.add(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+}
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+for(Enum e : PigWarning.values()) {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+Long currentCount = aggMap.get(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+currentCount = (currentCount == null? 0 : currentCount);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+currentCount += counters.getCounter(e);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/MapReduceLauncher.java
+aggMap.put(e, currentCount);
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+buildPlan(query);
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate x + null, x * null, x / null, x - null, null % x, " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate (2 > 1? null : 1), ( 2 < 1 ? null : 1), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"d = foreach c generate flatten((SIZE(a) == 0 ? null : a)), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+"b = foreach a generate SIZE(null), CONCAT(str, null), " +
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return true;
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return false;
+src/org/apache/pig/Main.java
+Utils.writeLog(pe, logFileName, log, verbose);
+src/org/apache/pig/Main.java
+Utils.writeLog(e, logFileName, log, verbose);
+src/org/apache/pig/Main.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/Main.java
+* distributed with this work for additional information
+src/org/apache/pig/Main.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/Main.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/Main.java
+*
+src/org/apache/pig/Main.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/Main.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/Main.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/Main.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/Main.java
+* limitations under the License.
+src/org/apache/pig/Main.java
+if(logFileName == null) {
+src/org/apache/pig/Main.java
+} catch (IOException ioe) {
+src/org/apache/pig/PigServer.java
+int errCode = 2110;
+src/org/apache/pig/PigServer.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/PigServer.java
+* distributed with this work for additional information
+src/org/apache/pig/PigServer.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/PigServer.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/PigServer.java
+*
+src/org/apache/pig/PigServer.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/PigServer.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/PigServer.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/PigServer.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/PigServer.java
+* limitations under the License.
+src/org/apache/pig/PigServer.java
+} catch (IOException ioe) {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+Utils.writeLog(exceptions.get(j), pigContext.getProperties().getProperty("pig.logfile"), log, false, headerMessage, false, false);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+throw new ExecException(msg, errCode, PigException.BUG);
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+} else {
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* distributed with this work for additional information
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+*
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+* limitations under the License.
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+*/
+src/org/apache/pig/backend/hadoop/executionengine/mapReduceLayer/Launcher.java
+try {
+src/org/apache/pig/builtin/BinStorage.java
+} catch (ExecException ee) {
+src/org/apache/pig/builtin/BinStorage.java
+throw ee;
+src/org/apache/pig/builtin/BinStorage.java
+}
+src/org/apache/pig/builtin/BinStorage.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/builtin/BinStorage.java
+* distributed with this work for additional information
+src/org/apache/pig/builtin/BinStorage.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/builtin/BinStorage.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/builtin/BinStorage.java
+*
+src/org/apache/pig/builtin/BinStorage.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/builtin/BinStorage.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/builtin/BinStorage.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/builtin/BinStorage.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/builtin/BinStorage.java
+* limitations under the License.
+src/org/apache/pig/builtin/BinStorage.java
+*/
+src/org/apache/pig/builtin/BinStorage.java
+try {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public DataBag bytesToBag(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public String bytesToCharArray(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Float bytesToFloat(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Integer bytesToInteger(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Long bytesToLong(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Map<Object, Object> bytesToMap(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+public Tuple bytesToTuple(byte[] b) throws IOException {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+"converted to long, caught NumberFormatException <" +
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+} catch (ParseException pe) {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+pigLogger = PhysicalOperator.getPigLogger();
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+} else {
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+}
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+return t;
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* distributed with this work for additional information
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+*
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+* limitations under the License.
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+*/
+src/org/apache/pig/builtin/Utf8StorageConverter.java
+try {
+src/org/apache/pig/data/DataReaderWriter.java
+} else {
+src/org/apache/pig/data/DataReaderWriter.java
+}
+src/org/apache/pig/data/DataReaderWriter.java
+// Don't use Tuple.readFields, because it requires you to
+src/org/apache/pig/data/DataReaderWriter.java
+// create a tuple with no size and then append fields.
+src/org/apache/pig/data/DataReaderWriter.java
+// That's less efficient than allocating the tuple size up
+src/org/apache/pig/data/DataReaderWriter.java
+// front and then filling in the spaces.
+src/org/apache/pig/data/DataReaderWriter.java
+// Read the size.
+src/org/apache/pig/data/DataReaderWriter.java
+int sz = in.readInt();
+src/org/apache/pig/data/DataReaderWriter.java
+// if sz == 0, we construct an "empty" tuple -
+src/org/apache/pig/data/DataReaderWriter.java
+// presumably the writer wrote an empty tuple!
+src/org/apache/pig/data/DataReaderWriter.java
+if (sz < 0) {
+src/org/apache/pig/data/DataReaderWriter.java
+throw new IOException("Invalid size " + sz +
+src/org/apache/pig/data/DataReaderWriter.java
+" for a tuple");
+src/org/apache/pig/data/DataReaderWriter.java
+Tuple t = mTupleFactory.newTuple(sz);
+src/org/apache/pig/data/DataReaderWriter.java
+for (int i = 0; i < sz; i++) {
+src/org/apache/pig/data/DataReaderWriter.java
+t.set(i, readDatum(in));
+src/org/apache/pig/data/DataReaderWriter.java
+return t;
+src/org/apache/pig/data/DataReaderWriter.java
+DataBag bag = mBagFactory.newDefaultBag();
+src/org/apache/pig/data/DataReaderWriter.java
+bag.readFields(in);
+src/org/apache/pig/data/DataReaderWriter.java
+return bag;
+src/org/apache/pig/data/DataReaderWriter.java
+case DataType.MAP: {
+src/org/apache/pig/data/DataReaderWriter.java
+int size = in.readInt();
+src/org/apache/pig/data/DataReaderWriter.java
+Map<Object, Object> m = new HashMap<Object, Object>(size);
+src/org/apache/pig/data/DataReaderWriter.java
+for (int i = 0; i < size; i++) {
+src/org/apache/pig/data/DataReaderWriter.java
+Object key = readDatum(in);
+src/org/apache/pig/data/DataReaderWriter.java
+m.put(key, readDatum(in));
+src/org/apache/pig/data/DataReaderWriter.java
+return m;
+src/org/apache/pig/data/DataReaderWriter.java
+byte[] ba = new byte[size];
+src/org/apache/pig/data/DataReaderWriter.java
+in.readFully(ba);
+src/org/apache/pig/data/DataReaderWriter.java
+return new String(ba, DataReaderWriter.UTF8);
+src/org/apache/pig/data/DataReaderWriter.java
+case DataType.CHARARRAY: {
+src/org/apache/pig/data/DataReaderWriter.java
+int size = in.readUnsignedShort();
+src/org/apache/pig/data/DataReaderWriter.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/data/DataReaderWriter.java
+* distributed with this work for additional information
+src/org/apache/pig/data/DataReaderWriter.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/data/DataReaderWriter.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/data/DataReaderWriter.java
+*
+src/org/apache/pig/data/DataReaderWriter.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/data/DataReaderWriter.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/data/DataReaderWriter.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/data/DataReaderWriter.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/data/DataReaderWriter.java
+* limitations under the License.
+src/org/apache/pig/data/DataReaderWriter.java
+*/
+src/org/apache/pig/tools/grunt/Grunt.java
+}
+src/org/apache/pig/tools/grunt/Grunt.java
+Utils.writeLog(t, pig.getPigContext().getProperties().getProperty("pig.logfile"), log, verbose);
+src/org/apache/pig/tools/grunt/Grunt.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/tools/grunt/Grunt.java
+* distributed with this work for additional information
+src/org/apache/pig/tools/grunt/Grunt.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/tools/grunt/Grunt.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/tools/grunt/Grunt.java
+*
+src/org/apache/pig/tools/grunt/Grunt.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/tools/grunt/Grunt.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/tools/grunt/Grunt.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/tools/grunt/Grunt.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/tools/grunt/Grunt.java
+* limitations under the License.
+src/org/apache/pig/tools/grunt/Grunt.java
+*/
+src/org/apache/pig/tools/grunt/Grunt.java
+try {
+src/org/apache/pig/tools/grunt/GruntParser.java
+} else {
+src/org/apache/pig/tools/grunt/GruntParser.java
+}
+src/org/apache/pig/tools/grunt/GruntParser.java
+* Licensed to the Apache Software Foundation (ASF) under one
+src/org/apache/pig/tools/grunt/GruntParser.java
+* distributed with this work for additional information
+src/org/apache/pig/tools/grunt/GruntParser.java
+* to you under the Apache License, Version 2.0 (the
+src/org/apache/pig/tools/grunt/GruntParser.java
+* "License"); you may not use this file except in compliance
+src/org/apache/pig/tools/grunt/GruntParser.java
+*
+src/org/apache/pig/tools/grunt/GruntParser.java
+* Unless required by applicable law or agreed to in writing, software
+src/org/apache/pig/tools/grunt/GruntParser.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+src/org/apache/pig/tools/grunt/GruntParser.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+src/org/apache/pig/tools/grunt/GruntParser.java
+* See the License for the specific language governing permissions and
+src/org/apache/pig/tools/grunt/GruntParser.java
+* limitations under the License.
+src/org/apache/pig/tools/grunt/GruntParser.java
+*/
+src/org/apache/pig/tools/grunt/GruntParser.java
+return;
+src/org/apache/pig/tools/grunt/GruntParser.java
+try {
+test/org/apache/pig/test/TestBestFitCast.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestBestFitCast.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestBestFitCast.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestBestFitCast.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestBestFitCast.java
+*
+test/org/apache/pig/test/TestBestFitCast.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestBestFitCast.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestBestFitCast.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestBestFitCast.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestBestFitCast.java
+* limitations under the License.
+test/org/apache/pig/test/TestGrunt.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestGrunt.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestGrunt.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestGrunt.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestGrunt.java
+*
+test/org/apache/pig/test/TestGrunt.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestGrunt.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestGrunt.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestGrunt.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestGrunt.java
+* limitations under the License.
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public DataBag bytesToBag(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public String bytesToCharArray(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Double bytesToDouble(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Float bytesToFloat(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Integer bytesToInteger(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Long bytesToLong(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Map<Object, Object> bytesToMap(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+public Tuple bytesToTuple(byte[] b) throws IOException {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+} else {
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+}
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* Licensed to the Apache Software Foundation (ASF) under one
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* distributed with this work for additional information
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* to you under the Apache License, Version 2.0 (the
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* "License"); you may not use this file except in compliance
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+*
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* Unless required by applicable law or agreed to in writing, software
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* distributed under the License is distributed on an "AS IS" BASIS,
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* See the License for the specific language governing permissions and
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+* limitations under the License.
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+*/
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+return;
+test/org/apache/pig/test/TestLogicalPlanBuilder.java
+try {
