@@ -22,6 +22,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.LinkedList;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,6 +49,8 @@ import org.apache.pig.backend.hadoop.executionengine.physicalLayer.plans.Physica
 import org.apache.pig.impl.plan.PlanException;
 import org.apache.pig.impl.plan.VisitorException;
 import org.apache.pig.impl.util.LogUtils;
+import org.apache.pig.impl.io.FileSpec;
+import org.apache.pig.tools.pigstats.PigStats;
 
 public abstract class Launcher {
     private static final Log log = LogFactory.getLog(Launcher.class);
@@ -57,6 +60,9 @@ public abstract class Launcher {
     boolean pigException = false;
     boolean outOfMemory = false;
     final String OOM_ERR = "OutOfMemoryError";
+
+    protected List<FileSpec> succeededStores = null;
+    protected List<FileSpec> failedStores = null;
     
     protected Launcher(){
         totalHadoopTimeSpent = 0;
@@ -64,7 +70,36 @@ public abstract class Launcher {
         if (System.getProperty("os.name").toUpperCase().startsWith("WINDOWS")) {
             newLine = "\r\n";
         }
+        reset();
     }
+
+    /**
+     * Returns a list of locations of results that have been
+     * successfully completed.
+     * @return A list of filspecs that corresponds to the locations of
+     * the successful stores.
+     */
+    public List<FileSpec> getSucceededFiles() {
+        return succeededStores;
+    }
+
+    /**
+     * Returns a list of locations of results that have failed.
+     * @return A list of filspecs that corresponds to the locations of
+     * the failed stores.
+     */
+    public List<FileSpec> getFailedFiles() {
+        return failedStores;
+    }
+
+    /**
+     * Resets the state after a launch
+     */
+    public void reset() {
+        succeededStores = new LinkedList<FileSpec>();
+        failedStores = new LinkedList<FileSpec>();
+    }
+
     /**
      * Method to launch pig for hadoop either for a cluster's
      * job tracker or for a local job runner. THe only difference
@@ -94,7 +129,7 @@ public abstract class Launcher {
      * @throws ExecException
      * @throws JobCreationException
      */
-    public abstract boolean launchPig(PhysicalPlan php, String grpName, PigContext pc)
+    public abstract PigStats launchPig(PhysicalPlan php, String grpName, PigContext pc)
             throws PlanException, VisitorException, IOException, ExecException,
             JobCreationException, Exception;
 
@@ -104,13 +139,17 @@ public abstract class Launcher {
      * @param pp PhysicalPlan to explain
      * @param pc PigContext to use for configuration
      * @param ps PrintStream to write output on.
+     * @param format Format to write in
+     * @param verbose Amount of information to print
      * @throws VisitorException
      * @throws IOException
      */
     public abstract void explain(
             PhysicalPlan pp,
             PigContext pc,
-            PrintStream ps) throws PlanException,
+            PrintStream ps,
+            String format,
+            boolean verbose) throws PlanException,
                                    VisitorException,
                                    IOException;
     
@@ -122,14 +161,14 @@ public abstract class Launcher {
         JobID MRJobID = job.getAssignedJobID();
         String jobMessage = job.getMessage();
         if(MRJobID == null) {
-        	try {
+            try {
                 throw getExceptionFromString(jobMessage);
             } catch (Exception e) {
                 //just get the first line in the message and log the rest
                 String firstLine = getFirstLineFromMessage(jobMessage);
-
+                
                 LogUtils.writeLog(new Exception(jobMessage), pigContext.getProperties().getProperty("pig.logfile"), 
-                        log, false, null, false, false);
+                                  log, false, null, false, false);
                 int errCode = 2997;
                 String msg = "Unable to recreate exception from backend error: " + firstLine;
                 throw new ExecException(msg, errCode, PigException.BUG, e);
@@ -174,32 +213,32 @@ public abstract class Launcher {
             	//this comparison is in place till Hadoop 0.20 provides methods to query
             	//job status            	
             	if(reports[i].getProgress() != successfulProgress) {
-            		jobFailed = true;
+                    jobFailed = true;
             	}
                 Set<String> errorMessageSet = new HashSet<String>();
                 for (int j = 0; j < msgs.length; j++) {                	
-	            	if(!errorMessageSet.contains(msgs[j])) {
-	            	    errorMessageSet.add(msgs[j]);
-		            	if (errNotDbg) {
-		            		//errNotDbg is used only for failed jobs
-		            	    //keep track of all the unique exceptions
+                    if(!errorMessageSet.contains(msgs[j])) {
+                        errorMessageSet.add(msgs[j]);
+                        if (errNotDbg) {
+                            //errNotDbg is used only for failed jobs
+                            //keep track of all the unique exceptions
                             try {
                                 Exception e = getExceptionFromString(msgs[j]);
                                 exceptions.add(e);
                             } catch (Exception e1) {
                                 String firstLine = getFirstLineFromMessage(msgs[j]);                                
                                 LogUtils.writeLog(new Exception(msgs[j]), pigContext.getProperties().getProperty("pig.logfile"), 
-                                        log, false, null, false, false);
+                                                  log, false, null, false, false);
                                 int errCode = 2997;
                                 String msg = "Unable to recreate exception from backed error: " + firstLine;
                                 throw new ExecException(msg, errCode, PigException.BUG, e1);
                             }
-		                } else {
-		                    log.debug("Error message from task (" + type + ") " +
-		                        reports[i].getTaskID() + msgs[j]);
-		                }
-	            	}
-	            }
+                        } else {
+                            log.debug("Error message from task (" + type + ") " +
+                                      reports[i].getTaskID() + msgs[j]);
+                        }
+                    }
+                }
             }
             
             //if its a failed job then check if there is more than one exception

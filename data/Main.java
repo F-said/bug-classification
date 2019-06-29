@@ -36,10 +36,10 @@ import org.apache.pig.impl.PigContext;
 import org.apache.pig.impl.io.FileLocalizer;
 import org.apache.pig.impl.logicalLayer.LogicalPlanBuilder;
 import org.apache.pig.impl.util.JarManager;
+import org.apache.pig.impl.util.ObjectSerializer;
 import org.apache.pig.impl.util.PropertiesUtil;
 import org.apache.pig.tools.cmdline.CmdLineParser;
 import org.apache.pig.tools.grunt.Grunt;
-import org.apache.pig.tools.grunt.PigCompletor;
 import org.apache.pig.impl.util.LogUtils;
 import org.apache.pig.tools.timer.PerformanceTimerFactory;
 import org.apache.pig.tools.parameters.ParameterSubstitutionPreprocessor;
@@ -83,6 +83,7 @@ public static void main(String args[])
         boolean dryrun = false;
         ArrayList<String> params = new ArrayList<String>();
         ArrayList<String> paramFiles = new ArrayList<String>();
+        HashSet<String> optimizerRules = new HashSet<String>();
 
         CmdLineParser opts = new CmdLineParser(args);
         opts.registerOpt('4', "log4jconf", CmdLineParser.ValueExpected.REQUIRED);
@@ -92,16 +93,19 @@ public static void main(String args[])
         opts.registerOpt('e', "execute", CmdLineParser.ValueExpected.NOT_ACCEPTED);
         opts.registerOpt('f', "file", CmdLineParser.ValueExpected.REQUIRED);
         opts.registerOpt('h', "help", CmdLineParser.ValueExpected.NOT_ACCEPTED);
-        opts.registerOpt('o', "hod", CmdLineParser.ValueExpected.NOT_ACCEPTED);
-        opts.registerOpt('j', "jar", CmdLineParser.ValueExpected.REQUIRED);
-        opts.registerOpt('v', "verbose", CmdLineParser.ValueExpected.NOT_ACCEPTED);
-        opts.registerOpt('x', "exectype", CmdLineParser.ValueExpected.REQUIRED);
         opts.registerOpt('i', "version", CmdLineParser.ValueExpected.OPTIONAL);
-        opts.registerOpt('p', "param", CmdLineParser.ValueExpected.OPTIONAL);
-        opts.registerOpt('m', "param_file", CmdLineParser.ValueExpected.OPTIONAL);
-        opts.registerOpt('r', "dryrun", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+        opts.registerOpt('j', "jar", CmdLineParser.ValueExpected.REQUIRED);
         opts.registerOpt('l', "logfile", CmdLineParser.ValueExpected.REQUIRED);
+        opts.registerOpt('m', "param_file", CmdLineParser.ValueExpected.OPTIONAL);
+        opts.registerOpt('o', "hod", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+        opts.registerOpt('p', "param", CmdLineParser.ValueExpected.OPTIONAL);
+        opts.registerOpt('r', "dryrun", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+        opts.registerOpt('t', "optimizer_off", CmdLineParser.ValueExpected.REQUIRED);
+        opts.registerOpt('v', "verbose", CmdLineParser.ValueExpected.NOT_ACCEPTED);
         opts.registerOpt('w', "warning", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+        opts.registerOpt('x', "exectype", CmdLineParser.ValueExpected.REQUIRED);
+        opts.registerOpt('F', "stop_on_failure", CmdLineParser.ValueExpected.NOT_ACCEPTED);
+        opts.registerOpt('M', "no_multiquery", CmdLineParser.ValueExpected.NOT_ACCEPTED);
 
         ExecMode mode = ExecMode.UNKNOWN;
         String file = null;
@@ -118,6 +122,12 @@ public static void main(String args[])
         
         //by default warning aggregation is on
         properties.setProperty("aggregate.warning", ""+true);
+
+        //by default multiquery optimization is on
+        properties.setProperty("opt.multiquery", ""+true);
+
+        //by default we keep going on error on the backend
+        properties.setProperty("stop.on.failure", ""+false);
 
         char opt;
         while ((opt = opts.getNextOpt()) != CmdLineParser.EndOfOpts) {
@@ -159,9 +169,17 @@ public static void main(String args[])
                 file = opts.getValStr();
                 break;
 
+            case 'F':
+                properties.setProperty("stop.on.failure", ""+true);
+                break;
+
             case 'h':
                 usage();
                 return;
+
+            case 'i':
+            	System.out.println(getVersionString());
+            	return;
 
             case 'j': 
                 String jarsString = opts.getValStr();
@@ -185,6 +203,11 @@ public static void main(String args[])
             case 'm':
                 paramFiles.add(opts.getValStr());
                 break;
+
+            case 'M':
+                // turns off multiquery optimization
+                properties.setProperty("opt.multiquery",""+false);
+                break;
                             
             case 'o': 
                 // TODO sgroschupf using system properties is always a very bad idea
@@ -206,6 +229,10 @@ public static void main(String args[])
                 // will be extended in the future
                 dryrun = true;
                 break;
+
+            case 't':
+            	optimizerRules.add(opts.getValStr());
+                break;
                             
             case 'v':
                 properties.setProperty(VERBOSE, ""+true);
@@ -223,9 +250,6 @@ public static void main(String args[])
                         throw new RuntimeException("ERROR: Unrecognized exectype.", e);
                     }
                 break;
-            case 'i':
-            	System.out.println(getVersionString());
-            	return;
             default: {
                 Character cc = new Character(opt);
                 throw new AssertionError("Unhandled option " + cc.toString());
@@ -242,6 +266,10 @@ public static void main(String args[])
         }
         
         pigContext.getProperties().setProperty("pig.logfile", logFileName);
+        
+        if(optimizerRules.size() > 0) {
+        	pigContext.getProperties().setProperty("pig.optimizer.rules", ObjectSerializer.serialize(optimizerRules));
+        }
 
         LogicalPlanBuilder.classloader = pigContext.createCl(null);
 
@@ -250,14 +278,14 @@ public static void main(String args[])
         BufferedReader in;
         String substFile = null;
         switch (mode) {
-        case FILE:
+        case FILE: {
             // Run, using the provided file as a pig file
             in = new BufferedReader(new FileReader(file));
 
             // run parameter substitution preprocessor first
             substFile = file + ".substituted";
             pin = runParamPreprocessor(in, params, paramFiles, substFile, debug || dryrun);
-            if (dryrun){
+            if (dryrun) {
                 log.info("Dry run completed. Substituted pig script is at " + substFile);
                 return;
             }
@@ -270,14 +298,16 @@ public static void main(String args[])
                                                    "PigLatin:" +new File(file).getName()
             );
             
-            if (!debug)
+            if (!debug) {
                 new File(substFile).deleteOnExit();
+            }
             
             grunt = new Grunt(pin, pigContext);
             gruntCalled = true;
-            grunt.exec();
-            rc = 0;
+            int results[] = grunt.exec();
+            rc = getReturnCodeForStats(results);
             return;
+        }
 
         case STRING: {
             // Gather up all the remaining arguments into a string and pass them into
@@ -291,8 +321,8 @@ public static void main(String args[])
             in = new BufferedReader(new StringReader(sb.toString()));
             grunt = new Grunt(in, pigContext);
             gruntCalled = true;
-            grunt.exec();
-            rc = 0;
+            int results[] = grunt.exec();
+            rc = getReturnCodeForStats(results);
             return;
             }
 
@@ -309,7 +339,6 @@ public static void main(String args[])
             // Interactive
             mode = ExecMode.SHELL;
             ConsoleReader reader = new ConsoleReader(System.in, new OutputStreamWriter(System.out));
-            reader.addCompletor(new PigCompletor());
             reader.setDefaultPrompt("grunt> ");
             final String HISTORYFILE = ".pig_history";
             String historyFile = System.getProperty("user.home") + File.separator  + HISTORYFILE;
@@ -341,8 +370,9 @@ public static void main(String args[])
             logFileName = validateLogFile(logFileName, remainders[0]);
             pigContext.getProperties().setProperty("pig.logfile", logFileName);
 
-            if (!debug)
+            if (!debug) {
                 new File(substFile).deleteOnExit();
+            }
 
             // Set job name based on name of the script
             pigContext.getProperties().setProperty(PigContext.JOB_NAME, 
@@ -351,8 +381,8 @@ public static void main(String args[])
 
             grunt = new Grunt(pin, pigContext);
             gruntCalled = true;
-            grunt.exec();
-            rc = 0;
+            int[] results = grunt.exec();
+            rc = getReturnCodeForStats(results);
             return;
         }
 
@@ -369,6 +399,7 @@ public static void main(String args[])
         } else {
             rc = 2;
         }
+
         if(!gruntCalled) {
         	LogUtils.writeLog(pe, logFileName, log, verbose);
         }
@@ -382,6 +413,23 @@ public static void main(String args[])
         FileLocalizer.deleteTempFiles();
         PerformanceTimerFactory.getPerfTimerFactory().dumpTimers();
         System.exit(rc);
+    }
+}
+
+private static int getReturnCodeForStats(int[] stats) {
+    if (stats[1] == 0) {
+        // no failed jobs
+        return 0;
+    }
+    else {
+        if (stats[0] == 0) {
+            // no succeeded jobs
+            return 2;
+        }
+        else {
+            // some jobs have failed
+            return 3;
+        }
     }
 }
 
@@ -477,22 +525,31 @@ private static String getVersionString() {
 public static void usage()
 {
 	System.out.println("\n"+getVersionString()+"\n");
-    System.out.println("USAGE: Pig [options] [-] : Run interactively in grunt shell.");
-    System.out.println("       Pig [options] -e[xecute] cmd [cmd ...] : Run cmd(s).");
-    System.out.println("       Pig [options] [-f[ile]] file : Run cmds found in file.");
-    System.out.println("  options include:");
-    System.out.println("    -4, -log4jconf log4j configuration file, overrides log conf");
-    System.out.println("    -b, -brief brief logging (no timestamps)");
-    System.out.println("    -c, -cluster clustername, kryptonite is default");
-    System.out.println("    -d, -debug debug level, INFO is default");
-    System.out.println("    -h, -help display this message");
-    System.out.println("    -j, -jar jarfile load jarfile"); 
-    System.out.println("    -o, -hod read hod server from system property ssh.gateway");
-    System.out.println("    -v, -verbose print all error messages to screen");
-    System.out.println("    -x, -exectype local|mapreduce, mapreduce is default");
-    System.out.println("    -i, -version display version information");
-    System.out.println("    -l, -logfile path to client side log file; current working directory is default");
-    System.out.println("    -w, -warning turn warning on; also turns warning aggregation off");
+        System.out.println("USAGE: Pig [options] [-] : Run interactively in grunt shell.");
+        System.out.println("       Pig [options] -e[xecute] cmd [cmd ...] : Run cmd(s).");
+        System.out.println("       Pig [options] [-f[ile]] file : Run cmds found in file.");
+        System.out.println("  options include:");
+        System.out.println("    -4, -log4jconf log4j configuration file, overrides log conf");
+        System.out.println("    -b, -brief brief logging (no timestamps)");
+        System.out.println("    -c, -cluster clustername, kryptonite is default");
+        System.out.println("    -d, -debug debug level, INFO is default");
+        System.out.println("    -e, -execute commands to execute (within quotes)");
+        System.out.println("    -f, -file path to the script to execute");
+        System.out.println("    -h, -help display this message");
+        System.out.println("    -i, -version display version information");
+        System.out.println("    -j, -jar jarfile load jarfile"); 
+        System.out.println("    -l, -logfile path to client side log file; current working directory is default");
+        System.out.println("    -m, -param_file path to the parameter file");
+        System.out.println("    -o, -hod read hod server from system property ssh.gateway");
+        System.out.println("    -p, -param key value pair of the form param=val");
+        System.out.println("    -r, -dryrun CmdLineParser.ValueExpected.NOT_ACCEPTED");
+        System.out.println("    -t, -optimizer_off optimizer rule name, turn optimizer off for this rule; use all to turn all rules off, optimizer is turned on by default");
+        System.out.println("    -v, -verbose print all error messages to screen");
+        System.out.println("    -w, -warning turn warning on; also turns warning aggregation off");
+        System.out.println("    -x, -exectype local|mapreduce, mapreduce is default");
+
+        System.out.println("    -F, -stop_on_failure aborts execution on the first failed job; off by default");
+        System.out.println("    -M, -no_multiquery turn multiquery optimization off; Multiquery is on by default");
 }
 
 private static String validateLogFile(String logFileName, String scriptName) {

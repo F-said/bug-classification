@@ -1893,6 +1893,15 @@ public class TestLogicalPlanBuilder extends junit.framework.TestCase {
         buildPlan("c = group b by $0;");
     }
 
+    @Test
+    public void testReservedWordsInFunctionNames() {
+        // test that define can contain reserved words are later parts of
+        // fully qualified function name
+        String query = "define FUNC org.apache.iterators.foreach();";
+        LogicalOperator lo = buildPlan(query).getRoots().get(0);
+        assertTrue(lo instanceof LODefine);
+    }
+
 
     @Test
     public void testTokenizeSchema()  throws FrontendException, ParseException {
@@ -1954,14 +1963,17 @@ public class TestLogicalPlanBuilder extends junit.framework.TestCase {
 
     public LogicalPlan buildPlan(String query, ClassLoader cldr) {
         LogicalPlanBuilder.classloader = cldr;
-        LogicalPlanBuilder builder = new LogicalPlanBuilder(pigContext); //
 
         try {
+            pigContext.connect();
+            LogicalPlanBuilder builder = new LogicalPlanBuilder(pigContext); //
+
             LogicalPlan lp = builder.parse("Test-Plan-Builder",
                                            query,
                                            aliases,
                                            logicalOpTable,
-                                           aliasOp);
+                                           aliasOp,
+                                           fileNameMap);
             List<LogicalOperator> roots = lp.getRoots();
             
             if(roots.size() > 0) {
@@ -1995,6 +2007,7 @@ public class TestLogicalPlanBuilder extends junit.framework.TestCase {
     Map<LogicalOperator, LogicalPlan> aliases = new HashMap<LogicalOperator, LogicalPlan>();
     Map<OperatorKey, LogicalOperator> logicalOpTable = new HashMap<OperatorKey, LogicalOperator>();
     Map<String, LogicalOperator> aliasOp = new HashMap<String, LogicalOperator>();
+    Map<String, String> fileNameMap = new HashMap<String, String>();
     PigContext pigContext = new PigContext(ExecType.LOCAL, new Properties());
 }
 

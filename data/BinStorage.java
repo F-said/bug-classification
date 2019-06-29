@@ -36,6 +36,7 @@ import org.apache.pig.PigException;
 import org.apache.pig.PigWarning;
 import org.apache.pig.ReversibleLoadStoreFunc;
 import org.apache.pig.backend.datastorage.DataStorage;
+import org.apache.pig.backend.datastorage.ElementDescriptor;
 import org.apache.pig.backend.executionengine.ExecException;
 import org.apache.pig.data.DataBag;
 import org.apache.pig.data.DataReaderWriter;
@@ -97,10 +98,17 @@ public class BinStorage implements ReversibleLoadStoreFunc {
                 continue;
             }
             if(b == -1) return null;
+            b = (byte) in.read();
+            if(b != DataType.TUPLE && b != -1) {
+                continue;
+            }
+            if(b == -1) return null;
             break;
         }
         try {
-            return (Tuple)DataReaderWriter.readDatum(inData);
+            // if we got here, we have seen RECORD_1-RECORD_2-RECORD_3-TUPLE_MARKER
+            // sequence - lets now read the contents of the tuple 
+            return (Tuple)DataReaderWriter.readDatum(inData, DataType.TUPLE);
         } catch (ExecException ee) {
             throw ee;
         }
@@ -247,7 +255,16 @@ public class BinStorage implements ReversibleLoadStoreFunc {
      */
     public Schema determineSchema(String fileName, ExecType execType,
             DataStorage storage) throws IOException {
+
+        if (!FileLocalizer.fileExists(fileName, storage)) {
+            // At compile time in batch mode, the file may not exist
+            // (such as intermediate file). Just return null - the
+            // same way as we would if we did not get a valid record
+            return null;
+        }
+        
         InputStream is = FileLocalizer.open(fileName, execType, storage);
+       
         bindTo(fileName, new BufferedPositionedInputStream(is), 0, Long.MAX_VALUE);
         // get the first record from the input file
         // and figure out the schema from the data in
@@ -382,6 +399,15 @@ public class BinStorage implements ReversibleLoadStoreFunc {
     }
     public boolean equals(Object obj) {
         return true;
+    }
+
+    /* (non-Javadoc)
+     * @see org.apache.pig.StoreFunc#getStorePreparationClass()
+     */
+    @Override
+    public Class getStorePreparationClass() throws IOException {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
 
