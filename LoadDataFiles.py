@@ -1,13 +1,14 @@
 import pandas as pd
 import os
 import applyw2v
+import shutil
 
 """
 Script to create java files that contain buggy code, concatenate files into one file, and then create csv file of
 statements with respective labels.
 """
 
-def loadFiles(filetype, path, target_files):
+def loadFiles(filetype, paths, target_files):
     """
     :param filetype: file type that you are loading. For example, "java" for java files, "txt" for text files, etc.
     :param path: path where the source files are located. On local machine:
@@ -15,6 +16,7 @@ def loadFiles(filetype, path, target_files):
     :param target_file: name of file where buggy files are parsed from: PigBuggyLines.txt; pig_the_other_version_buggy_list.txt
     :return:
     """
+    index = 0
     for txt_file in target_files:
         # Load PigBuggyLines
         buggyfiles = open(txt_file, "r")
@@ -35,10 +37,16 @@ def loadFiles(filetype, path, target_files):
             file_name = file[begin_ind:]
 
             # create file of "file_name" and copy code from file that is in the path
-            open(file_name, "w").writelines([l for l in open(path + file, "r").readlines()])
+            open(file_name, "w").writelines([l for l in open(paths[index] + file, "r").readlines()])
 
-        # TODO: MOVE FILES INTO "DATA" DIRECTORY
-        # INsert code here
+            # Move files into data directory
+            shutil.move("/Users/farukhsaidmuratov/PycharmProjects/bug-classification/" + file_name
+                        , "/Users/farukhsaidmuratov/PycharmProjects/bug-classification/data/" + file_name)
+        # Move to next path
+        index += 1
+
+    print("Files loaded")
+
 
 def concatFiles(write_file):
     """
@@ -57,6 +65,7 @@ def concatFiles(write_file):
         data.writelines([l for l in open(path + filename, "r").readlines()])
 
     data.close()
+    print(write_file, " created")
 
 def labelBugs(target_files, save=True):
     """
@@ -146,13 +155,14 @@ def labelBugs(target_files, save=True):
     if save:
         # Save as csv file
         buggy_code_df.to_csv(path_or_buf="bug-classification.csv", index=False)
+    print("Buggy code csv created")
 
 def main():
     # Text files that contain buggy code
-    buggy = ["pig_the_other_version_buggy_list.txt", "PigBuggyLines.txt"]
-    # Respective path
-    path = "/Users/farukhsaidmuratov/Desktop/SemesterFolder/Summer2019/NSFREUNJIT/extra-data-and-example-code/" \
-           "extra-data"
+    buggy = ["PigBuggyLines.txt", "pig_the_other_version_buggy_list.txt"]
+    # Respective paths path
+    path = ["/Users/farukhsaidmuratov/Desktop/SemesterFolder/Summer2019/NSFREUNJIT/Code-and-Data/Pig/",
+            "/Users/farukhsaidmuratov/Desktop/SemesterFolder/Summer2019/NSFREUNJIT/extra-data-and-example-code/extra-data/Pig/"]
     # Type of file
     file_type = "java"
     # File to save all buggy lines to
@@ -162,12 +172,10 @@ def main():
     loadFiles(file_type, path, buggy)
     # Write all files into one file
     concatFiles(target)
-
     # Apply w2v model
     applyw2v.main()
-
     # Create csv file of buggy lines
-    labelBugs(target)
+    labelBugs(buggy)
 
 
 if __name__ == '__main__':
