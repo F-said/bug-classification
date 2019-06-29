@@ -67,6 +67,12 @@ y_train = y_data[rand_sample]
 x_test = x_data[~rand_sample]
 y_test = y_data[~rand_sample]
 
+# Get number of positive and negative targets in train and test data
+print("Y_train positive count", np.count_nonzero(y_train == 0.99))
+print("Y_train negative count", np.count_nonzero(y_train == 0))
+print("Y_test positive count", np.count_nonzero(y_test == 0.99))
+print("Y_test negative count", np.count_nonzero(y_test == 0))
+
 oversample = False
 if oversample:
     # Set random state for consistency. Create equal number of buggy lines to non-buggy lines
@@ -87,7 +93,12 @@ if oversample:
     x_train = x_train.reshape([-1, input_len, input_dim])
     x_test = x_test.reshape([-1, input_len, input_dim])
 
+    # Get oversampled number of positive targets in train and test data
     print("You've been oversampled")
+
+    print("Y_train positive count", np.count_nonzero(y_train == 0.99))
+    print("Y_test positive count", np.count_nonzero(y_test == 0.99))
+
 
 saved = True
 if saved and oversample:
